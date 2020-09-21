@@ -66,10 +66,10 @@ graph* LoadGraphFromFile(char* fichier){
 				monGraph->m_data[i]->m_layer = NOTHING;
 				monGraph->m_data[i]->m_layerID = -1; //Signifie que l'objet n'a pas d'ID
 		}
-		monGraph->m_data[i]->m_neighbors[0] = monGraph->m_data[i]->m_posY ? &monGraph->m_data[i-sizeX] : NULL;
+		monGraph->m_data[i]->m_neighbors[0] = monGraph->m_data[i]->m_posY ? monGraph->m_data[i-sizeX] : NULL;
 		monGraph->m_data[i]->m_neighbors[1] = monGraph->m_data[i]->m_posX ? monGraph->m_data[i-1] : NULL;
 		monGraph->m_data[i]->m_neighbors[2] = (monGraph->m_data[i]->m_posX+1) < sizeX ? monGraph->m_data[i+1] : NULL;
-		monGraph->m_data[i]->m_neighbors[3] = ((monGraph->m_data[i]->m_posY+1)) < sizeY ? monGraph->m_data[i+sizeX] : NULL;
+		monGraph->m_data[i]->m_neighbors[3] = (monGraph->m_data[i]->m_posY+1) < sizeY ? monGraph->m_data[i+sizeX] : NULL;
 		monGraph->m_data[i]->m_data = NULL;
 	}
 	
