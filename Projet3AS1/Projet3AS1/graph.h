@@ -53,10 +53,10 @@ struct sGraph
 struct sNode
 {
 	int m_id; //Indice du noeud
-	int m_posX; //Position X/Y du noeud dans le graphe
-	int m_posY;
-	char m_layer; //Masque du type de terrain (egroundmask)
-	char m_layerID; //L'ID du type de terrain (egroundid)
+	unsigned char m_posX; //Position X/Y du noeud dans le graphe
+	unsigned char m_posY;
+	unsigned char m_layer; //Masque du type de terrain (egroundmask)
+	unsigned char m_layerID; //L'ID du type de terrain (egroundid)
 	node* m_neighbors[4]; //Tableau statique des 4 voisins (haut bas gauche droite) du noeud
 	void* m_data; //Pointeur générique  
 };
@@ -69,3 +69,6 @@ struct sDijkstraNode
 	node* m_prev; //Noeud précédent
 };
 
+dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask);
+node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y);
+int GetManhattanDistance(node* a, node* b);
