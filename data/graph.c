@@ -29,10 +29,13 @@ graph* LoadGraphFromFile(char* fichier){
 	char c;
 	
 	for(int i = 0; i < sizeY*sizeX; i++){
-		fscanf(monFichier,"%c",&c); //erreur si fichier non complet !!!
+		do{
+			fscanf(monFichier,"%c",&c); //erreur si fichier non complet !!!
+		}while(c < 'A' || c > 'Z');
 		monGraph->m_data[i]->m_id = i;
 		monGraph->m_data[i]->m_posX = i%sizeX;
 		monGraph->m_data[i]->m_posY = i/sizeX;
+		
 		
 		switch(c){
 			case 'G':
