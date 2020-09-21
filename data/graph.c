@@ -1,3 +1,5 @@
+#include "./graph.h"
+
 graph* LoadGraphFromFile(char* fichier){
 	
 	graph* monGraph = NULL;
@@ -7,7 +9,7 @@ graph* LoadGraphFromFile(char* fichier){
 		return NULL;
 	
 	int sizeX, sizeY;
-	fscanf("%d%d", &sizeX, &sizeY);
+	fscanf(monFichier,"%d%d", &sizeX, &sizeY);
 	
 	if(sizeX <= 0 || sizeY <= 0){
 		fclose(monFichier);
@@ -27,9 +29,9 @@ graph* LoadGraphFromFile(char* fichier){
 	char c;
 	
 	for(int i = 0; i < sizeY*sizeX; i++){
-		fscanf("%c",&c); //erreur si fichier non complet !!!
-		monGraph->m_data[i]->id = i;
-		printf("id: %d\n, monGraph->m_data[i]->id);
+		fscanf(monFichier,"%c",&c); //erreur si fichier non complet !!!
+		monGraph->m_data[i]->m_id = i;
+		printf("id: %d\n", monGraph->m_data[i]->m_id);
 		monGraph->m_data[i]->m_posX = i%sizeX;
 		monGraph->m_data[i]->m_posY = i/sizeX;
 		
@@ -69,16 +71,16 @@ graph* LoadGraphFromFile(char* fichier){
 		monGraph->m_data[i]->m_data = NULL;
 	}
 	
-	return graph;
+	return monGraph;
 }
 
 void FreeGraph(graph* monGraph){
 	if(!monGraph || !monGraph->m_data)
 		return;
 	
-	for(int i = 0; i < sizeY*sizeX; i++){
-		if(m_data)
-			free(m_data); //peut causer des problèmes si m_data est d'un type défini par l'utilisateur
+	for(int i = 0; i < monGraph->m_sizeY*monGraph->m_sizeX; i++){
+		if(monGraph->m_data[i]->m_data)
+			free(monGraph->m_data[i]->m_data); //peut causer des problèmes si m_data est d'un type défini par l'utilisateur
 		free(monGraph->m_data[i]);
 	}
 	free(monGraph->m_data);

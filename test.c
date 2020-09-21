@@ -1,4 +1,4 @@
-#include "./graph.h"
+#include "./data/graph.h"
 
 void afficherGraphByTID(graph* g){
 	if(!g || !g->m_data)
