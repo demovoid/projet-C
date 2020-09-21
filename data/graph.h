@@ -147,10 +147,11 @@ void FreeGraph(graph* monGraph){
 	if(!monGraph || !monGraph->m_data)
 		return;
 	
-	for(int i = 0; i < sizeY; i++)
-		for(int j = 0; j < sizeX; j++){
-			if(m_data)
-				free(m_data); //peut causer des problèmes si m_data est d'un type défini par l'utilisateur
-			
-		}
+	for(int i = 0; i < sizeY*sizeX; i++){
+		if(m_data)
+			free(m_data); //peut causer des problèmes si m_data est d'un type défini par l'utilisateur
+		free(monGraph->m_data[i]);
+	}
+	free(monGraph->m_data);
+	free(monGraph);
 }
