@@ -53,7 +53,7 @@ struct sGraph
 struct sNode
 {
 	int m_id; //Indice du noeud
-	int m_pos_X; //Position X/Y du noeud dans le graphe
+	int m_posX; //Position X/Y du noeud dans le graphe
 	int m_posY;
 	char m_layer; //Masque du type de terrain (egroundmask)
 	char m_layerID; //L'ID du type de terrain (egroundid)
