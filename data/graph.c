@@ -74,7 +74,7 @@ graph* LoadGraphFromFile(char* fichier){
 	return monGraph;
 }
 
-void FreeGraph(graph* monGraph){
+void freeGraph(graph* monGraph){
 	if(!monGraph || !monGraph->m_data)
 		return;
 	

@@ -71,4 +71,4 @@ struct sDijkstraNode
 
 graph* LoadGraphFromFile(char* fichier);
 
-void FreeGraph(graph* monGraph);
+void freeGraph(graph* monGraph);

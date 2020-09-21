@@ -6,7 +6,7 @@ void afficherGraphByTID(graph* g){
 	
 	for(int i = 0, l = 0; i < g->m_sizeY; i++){
 		for(int j = 0; j < g->m_sizeX; j++)
-			printf("%c ", s_groundChar[g->m_data[i*m_sizeX + j]->m_layerID]);
+			printf("%c ", s_groundChar[g->m_data[i*g->m_sizeX + j]->m_layerID]);
 		printf("\n");
 	}
 }
@@ -17,7 +17,7 @@ void afficherGraphByID(graph* g){
 	
 	for(int i = 0, l = 0; i < g->m_sizeY; i++){
 		for(int j = 0; j < g->m_sizeX; j++)
-			printf("%c ", g->m_data[i*m_sizeX + j]->m_id);
+			printf("%c ", g->m_data[i*g->m_sizeX + j]->m_id);
 		printf("\n");
 	}
 }
@@ -27,7 +27,7 @@ int main(){
 	
 	//Test de création du graphe
 	graph* monGraph = LoadGraphFromFile("./map.ini");
-	printf("Pointeur: %p\n,monGraph);
+	printf("Pointeur: %p\n",monGraph);
 	afficherGraphByID(monGraph);
 	
 	
