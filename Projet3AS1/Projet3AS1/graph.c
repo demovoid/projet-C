@@ -22,3 +22,31 @@ int GetManhattanDistance(node* a, node* b)
 		dy = -dy;
 	return dx + dy;
 }
+
+char IsNeighbour(node* a, node* b)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (a->m_neighbors[i])
+		{
+			if (a->m_neighbors[i]->m_id == b->m_id)
+				return 1;
+		}
+	}
+	return 0;
+}
+
+void SetNodeData(node* noeud, void* data)
+{
+
+}
+
+void* GetNodeData(node* noeud)
+{
+
+}
+
+int GetLayerIDFromChar(char character)
+{
+
+}

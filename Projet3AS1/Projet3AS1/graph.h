@@ -72,3 +72,7 @@ struct sDijkstraNode
 dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask);
 node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y);
 int GetManhattanDistance(node* a, node* b);
+int GetLayerIDFromChar(char character);
+char IsNeighbour(node* a, node* b);
+void SetNodeData(node* noeud, void* data); //mettre data dans le champ de noeud
+void* GetNodeData(node* noeud);
