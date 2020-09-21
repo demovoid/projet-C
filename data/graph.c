@@ -31,7 +31,6 @@ graph* LoadGraphFromFile(char* fichier){
 	for(int i = 0; i < sizeY*sizeX; i++){
 		fscanf(monFichier,"%c",&c); //erreur si fichier non complet !!!
 		monGraph->m_data[i]->m_id = i;
-		printf("id: %d\n", monGraph->m_data[i]->m_id);
 		monGraph->m_data[i]->m_posX = i%sizeX;
 		monGraph->m_data[i]->m_posY = i/sizeX;
 		

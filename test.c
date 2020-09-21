@@ -26,7 +26,7 @@ int main(){
 	int val;
 	
 	//Test de création du graphe
-	graph* monGraph = LoadGraphFromFile("./map.ini");
+	graph* monGraph = LoadGraphFromFile("./data/map.ini");
 	printf("Pointeur: %p\n",monGraph);
 	afficherGraphByID(monGraph);
 	
