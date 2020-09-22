@@ -73,6 +73,7 @@ graph* LoadGraphFromFile(char* fichier);
 void freeGraph(graph* monGraph);
 int GetLayerIDFromChar(char c);
 dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask);
+void FreeDijkstra(dijkstraNode** d, graph* g);
 node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y);
 int GetManhattanDistance(node* a, node* b);
 int GetLayerIDFromChar(char character);

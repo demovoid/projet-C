@@ -4,20 +4,9 @@
 void afficherGraphByTID(graph* g){
 	if(!g || !g->m_data)
 		return;
-	
-	for(int i = 0; i < g->m_sizeY; i++){
-		for(int j = 0; j < g->m_sizeX; j++)
-			printf("%c ", s_groundChar[g->m_data[i*g->m_sizeX + j]->m_layerID]);
-		printf("\n");
-	}
-}
 
-void afficherGraphByID(graph* g){
-	if(!g || !g->m_data)
-		return;
-	
 	char couleur[20];
-
+	
 	for(int i = 0; i < g->m_sizeY; i++){
 		for(int j = 0; j < g->m_sizeX; j++){
 			switch(g->m_data[i*g->m_sizeX + j]->m_id){
@@ -42,7 +31,19 @@ void afficherGraphByID(graph* g){
 				default:
 					strcpy(couleur,"");
 			}
-			printf("%s%03d\x1b[0m ", couleur, g->m_data[i*g->m_sizeX + j]->m_id);
+			printf("%s%c\x1b[0m ", couleur, s_groundChar[g->m_data[i*g->m_sizeX + j]->m_layerID]);
+		}
+		printf("\n");
+	}
+}
+
+void afficherGraphByID(graph* g){
+	if(!g || !g->m_data)
+		return;
+
+	for(int i = 0; i < g->m_sizeY; i++){
+		for(int j = 0; j < g->m_sizeX; j++){
+			printf("%03d ", g->m_data[i*g->m_sizeX + j]->m_id);
 		}
 		printf("\n");
 	}

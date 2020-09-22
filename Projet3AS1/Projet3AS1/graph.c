@@ -107,16 +107,16 @@ dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 	nd[indice]->m_flag = 1;
 
 	dijkstraNode* target = NULL;
-	dijkstraNode* next = NULL;
+	dijkstraNode* next;
 
 	do{
+		next = NULL;
 		for(int i = 0; i < 4; i++){
-			if(G->m_data[indice]->m_neighbors[i]->m_layer & mask){
+			if(nd[indice]->m_node->m_neighbors[i] && nd[indice]->m_node->m_neighbors[i]->m_layer & mask){
 				target = nd[G->m_data[indice]->m_neighbors[i]->m_posY*G->m_sizeX + G->m_data[indice]->m_neighbors[i]->m_posX];
 				if(!target->m_flag){
-					int dist = GetManhattanDistance(nd[indice]->m_node, target->m_node);
-					if(dist > nd[indice]->m_distance)
-						target->m_distance = nd[indice]->m_distance;
+					if(target->m_distance > nd[indice]->m_distance + 1)
+						target->m_distance = nd[indice]->m_distance + 1;
 					if(!next || next->m_distance > target->m_distance)
 						next = target;
 				}
@@ -131,7 +131,7 @@ dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 		}
 
 		indice = next ? next->m_node->m_posY*G->m_sizeX + next->m_node->m_posX : -1;
-
+		
 	}while(next);
 	
 	return nd;
