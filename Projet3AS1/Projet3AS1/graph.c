@@ -1,3 +1,5 @@
+#define _GRAPH_C_
+
 #include "./graph.h"
 
 /**
@@ -16,94 +18,96 @@
  * @return Pointeur sur un graphe
 */
 graph* LoadGraphFromFile(char* fichier){
-	
-	graph* monGraph = NULL;
-	FILE* monFichier = fopen(fichier,"r");
-	
-	if(!monFichier)
-		return NULL;
-	
-	int sizeX, sizeY;
-	fscanf(monFichier,"%d%d", &sizeX, &sizeY);
-	
-	if(sizeX <= 0 || sizeY <= 0){
-		fclose(monFichier);
-		return NULL;
-	}
-		
-	monGraph = malloc(sizeof(graph));
-	
-	monGraph->m_sizeX = sizeX;
-	monGraph->m_sizeY = sizeY;
-	
-	monGraph->m_data = malloc(sizeof(node*)*sizeY*sizeX);
-	
-	for(int i = 0; i < sizeX*sizeY; i++)
-		monGraph->m_data[i] = malloc(sizeof(node));
-	
-	char c;
-	
-	for(int i = 0; i < sizeY*sizeX && !feof(monFichier); i++){
-		do{
-			fscanf(monFichier,"%c",&c); //erreur si fichier non complet !!!
-		}while((c < 'A' || c > 'Z') && !feof(monFichier));
-		monGraph->m_data[i]->m_id = i;
-		monGraph->m_data[i]->m_posX = i%sizeX;
-		monGraph->m_data[i]->m_posY = i/sizeX;
-		
-		
-		switch(c){
-			case 'G':
-				monGraph->m_data[i]->m_layer = GRASS;
-				monGraph->m_data[i]->m_layerID = GRASS_ID;
-				break;
-			case 'F':
-				monGraph->m_data[i]->m_layer = FOREST;
-				monGraph->m_data[i]->m_layerID = FOREST_ID;
-				break;
-			case 'M':
-				monGraph->m_data[i]->m_layer = MOUNTAIN;
-				monGraph->m_data[i]->m_layerID = MOUNTAIN_ID;
-				break;
-			case 'C':
-				monGraph->m_data[i]->m_layer = CITY;
-				monGraph->m_data[i]->m_layerID = CITY_ID;
-				break;
-			case 'R':
-				monGraph->m_data[i]->m_layer = ROAD;
-				monGraph->m_data[i]->m_layerID = ROAD_ID;
-				break;
-			case 'W':
-				monGraph->m_data[i]->m_layer = WATER;
-				monGraph->m_data[i]->m_layerID = WATER_ID;
-				break;
-			default:
-				monGraph->m_data[i]->m_layer = NOTHING;
-				monGraph->m_data[i]->m_layerID = -1; //Signifie que l'objet n'a pas d'ID
-		}
-		monGraph->m_data[i]->m_neighbors[0] = monGraph->m_data[i]->m_posY ? monGraph->m_data[i-sizeX] : NULL;
-		monGraph->m_data[i]->m_neighbors[1] = monGraph->m_data[i]->m_posX ? monGraph->m_data[i-1] : NULL;
-		monGraph->m_data[i]->m_neighbors[2] = (monGraph->m_data[i]->m_posX+1) < sizeX ? monGraph->m_data[i+1] : NULL;
-		monGraph->m_data[i]->m_neighbors[3] = (monGraph->m_data[i]->m_posY+1) < sizeY ? monGraph->m_data[i+sizeX] : NULL;
-		monGraph->m_data[i]->m_data = NULL;
-	}
 
-	fclose(monFichier);
+LIB_API	graph* LoadGraphFromFile(char* fichier){
 	
-	return monGraph;
-}
+		graph* monGraph = NULL;
+		FILE* monFichier = fopen(fichier,"r");
+	
+		if(!monFichier)
+			return NULL;
+	
+		int sizeX, sizeY;
+		fscanf(monFichier,"%d%d", &sizeX, &sizeY);
+	
+		if(sizeX <= 0 || sizeY <= 0){
+			fclose(monFichier);
+			return NULL;
+		}
+		
+		monGraph = malloc(sizeof(graph));
+	
+		monGraph->m_sizeX = sizeX;
+		monGraph->m_sizeY = sizeY;
+	
+		monGraph->m_data = malloc(sizeof(node*)*sizeY*sizeX);
+	
+		for(int i = 0; i < sizeX*sizeY; i++)
+			monGraph->m_data[i] = malloc(sizeof(node));
+	
+		char c;
+	
+		for(int i = 0; i < sizeY*sizeX && !feof(monFichier); i++){
+			do{
+				fscanf(monFichier,"%c",&c); //erreur si fichier non complet !!!
+			}while((c < 'A' || c > 'Z') && !feof(monFichier));
+			monGraph->m_data[i]->m_id = i;
+			monGraph->m_data[i]->m_posX = i%sizeX;
+			monGraph->m_data[i]->m_posY = i/sizeX;
+		
+		
+			switch(c){
+				case 'G':
+					monGraph->m_data[i]->m_layer = GRASS;
+					monGraph->m_data[i]->m_layerID = GRASS_ID;
+					break;
+				case 'F':
+					monGraph->m_data[i]->m_layer = FOREST;
+					monGraph->m_data[i]->m_layerID = FOREST_ID;
+					break;
+				case 'M':
+					monGraph->m_data[i]->m_layer = MOUNTAIN;
+					monGraph->m_data[i]->m_layerID = MOUNTAIN_ID;
+					break;
+				case 'C':
+					monGraph->m_data[i]->m_layer = CITY;
+					monGraph->m_data[i]->m_layerID = CITY_ID;
+					break;
+				case 'R':
+					monGraph->m_data[i]->m_layer = ROAD;
+					monGraph->m_data[i]->m_layerID = ROAD_ID;
+					break;
+				case 'W':
+					monGraph->m_data[i]->m_layer = WATER;
+					monGraph->m_data[i]->m_layerID = WATER_ID;
+					break;
+				default:
+					monGraph->m_data[i]->m_layer = NOTHING;
+					monGraph->m_data[i]->m_layerID = -1; //Signifie que l'objet n'a pas d'ID
+			}
+			monGraph->m_data[i]->m_neighbors[0] = monGraph->m_data[i]->m_posY ? monGraph->m_data[i-sizeX] : NULL;
+			monGraph->m_data[i]->m_neighbors[1] = monGraph->m_data[i]->m_posX ? monGraph->m_data[i-1] : NULL;
+			monGraph->m_data[i]->m_neighbors[2] = (monGraph->m_data[i]->m_posX+1) < sizeX ? monGraph->m_data[i+1] : NULL;
+			monGraph->m_data[i]->m_neighbors[3] = (monGraph->m_data[i]->m_posY+1) < sizeY ? monGraph->m_data[i+sizeX] : NULL;
+			monGraph->m_data[i]->m_data = NULL;
+		}
+
+		fclose(monFichier);
+	
+		return monGraph;
+	}
 
 /**
  * \brief Libère la mémoire allouée pour le graph
  *
  * @param monGraph Graphe à libérer
 */
-void freeGraph(graph* monGraph){
-	if(!monGraph || !monGraph->m_data)
-		return;
+LIB_API	void freeGraph(graph* monGraph){
+		if(!monGraph || !monGraph->m_data)
+			return;
 	
-	for(int i = 0; i < monGraph->m_sizeY*monGraph->m_sizeX; i++)
-		free(monGraph->m_data[i]);
+		for(int i = 0; i < monGraph->m_sizeY*monGraph->m_sizeX; i++)
+			free(monGraph->m_data[i]);
 
 	free(monGraph->m_data);
 	free(monGraph);
@@ -130,42 +134,54 @@ dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 		nd[i]->m_prev = NULL;
 	}
 
-	int indice = init->m_posY*G->m_sizeX + init->m_posX;
+LIB_API	dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
+	{
+		int nbCells = G->m_sizeX * G->m_sizeY;
+		dijkstraNode** nd = malloc(sizeof(dijkstraNode*) * nbCells);
+		for(int i = 0; i < nbCells; i++){
+			nd[i] = malloc(sizeof(dijkstraNode));
+			nd[i]->m_node = G->m_data[i]; 
+			nd[i]->m_distance = INFINITY_DIST;
+			nd[i]->m_flag = 0; 
+			nd[i]->m_prev = NULL;
+		}
 
-	nd[indice]->m_distance = 0;
-	nd[indice]->m_flag = 1;
+		int indice = init->m_posY*G->m_sizeX + init->m_posX;
 
-	dijkstraNode* target = NULL;
-	dijkstraNode* next;
+		nd[indice]->m_distance = 0;
+		nd[indice]->m_flag = 1;
 
-	do{
-		next = NULL;
-		for(int i = 0; i < 4; i++){
-			if(nd[indice]->m_node->m_neighbors[i] && nd[indice]->m_node->m_neighbors[i]->m_layer & mask){
-				target = nd[G->m_data[indice]->m_neighbors[i]->m_posY*G->m_sizeX + G->m_data[indice]->m_neighbors[i]->m_posX];
-				if(!target->m_flag){
-					if(target->m_distance > nd[indice]->m_distance + 1)
-						target->m_distance = nd[indice]->m_distance + 1;
-					if(!next || next->m_distance > target->m_distance)
-						next = target;
+		dijkstraNode* target = NULL;
+		dijkstraNode* next;
+
+		do{
+			next = NULL;
+			for(int i = 0; i < 4; i++){
+				if(nd[indice]->m_node->m_neighbors[i] && nd[indice]->m_node->m_neighbors[i]->m_layer & mask){
+					target = nd[G->m_data[indice]->m_neighbors[i]->m_posY*G->m_sizeX + G->m_data[indice]->m_neighbors[i]->m_posX];
+					if(!target->m_flag){
+						if(target->m_distance > nd[indice]->m_distance + 1)
+							target->m_distance = nd[indice]->m_distance + 1;
+						if(!next || next->m_distance > target->m_distance)
+							next = target;
+					}
 				}
 			}
-		}
 
-		if(!next)
-			next = nd[indice]->m_prev;
-		else{
-			next->m_flag = 1;
-			next->m_prev = nd[indice];
-		}
+			if(!next)
+				next = nd[indice]->m_prev;
+			else{
+				next->m_flag = 1;
+				next->m_prev = nd[indice];
+			}
 
-		indice = next ? next->m_node->m_posY*G->m_sizeX + next->m_node->m_posX : -1;
+			indice = next ? next->m_node->m_posY*G->m_sizeX + next->m_node->m_posX : -1;
 		
-	}while(next);
+		}while(next);
 	
-	return nd;
+		return nd;
 
-}
+	}
 
 /**
  * \brief Libère la mémoire allouée par Dijkstra
@@ -173,15 +189,15 @@ dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
  * @param d Tableau de noeux issu de l'algo de Dijkstra
  * @param size Nombre de cases allouées dans le tableau
 */
-void FreeDijkstra(dijkstraNode** d, int size){
-	if(!d)
-		return;
+LIB_API	void FreeDijkstra(dijkstraNode** d, graph* g){
+		if(!d)
+			return;
 	
 	for(int i = 0; i < size; i++)
 		free(d[i]);
 		
-	free(d);
-}
+		free(d);
+	}
 
 /**
  * \brief Permet de récuperer la position d'un noeud dans un graphe
@@ -192,12 +208,12 @@ void FreeDijkstra(dijkstraNode** d, int size){
  *
  * @return Pointeur sur le noeud recherché (s'il existe, NULL sinon)
 */
-node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y)
-{
-	if(X < (unsigned int)G->m_sizeX && Y < (unsigned int)G->m_sizeY)
-		return G->m_data[Y * G->m_sizeX + X];
-	return NULL;
-}
+LIB_API	node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y)
+	{
+		if(X < (unsigned int)G->m_sizeX && Y < (unsigned int)G->m_sizeY)
+			return G->m_data[Y * G->m_sizeX + X];
+		return NULL;
+	}
 
 /**
  * \brief Permet d'obtenir la distance de Manhattan entre deux noeux
@@ -207,16 +223,16 @@ node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y)
  *
  * @return La distance de Manhattan entre les deux noeud
 */
-int GetManhattanDistance(node* a, node* b)
-{
-	int dx = b->m_posX - a->m_posX;
-	int dy = b->m_posY - a->m_posY;
-	if (dx < 0)
-		dx = -dx;
-	if (dy < 0)
-		dy = -dy;
-	return dx + dy;
-}
+LIB_API	int GetManhattanDistance(node* a, node* b)
+	{
+		int dx = b->m_posX - a->m_posX;
+		int dy = b->m_posY - a->m_posY;
+		if (dx < 0)
+			dx = -dx;
+		if (dy < 0)
+			dy = -dy;
+		return dx + dy;
+	}
 
 /**
  * \brief Verifie si deux noeud sont voisins
@@ -226,26 +242,21 @@ int GetManhattanDistance(node* a, node* b)
  *
  * @return 1 si les noeud sont voisins, 0 sinon
 */
-char IsNeighbour(node* a, node* b)
+LIB_API	char IsNeighbour(node* a, node* b)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (a->m_neighbors[i])
+		for (int i = 0; i < 4; i++)
 		{
-			if (a->m_neighbors[i] == b)
-				return 1;
+			if (a->m_neighbors[i])
+			{
+				if (a->m_neighbors[i] == b)
+					return 1;
+			}
 		}
+		return 0;
 	}
-	return 0;
-}
 
-/**
- * \brief Permet de récupérer l'identifiant d'un terrain à partir de sa lettre
- *
- * @param c Charactère correspondant au terrain (voir s_groundChar)
- *
- * @return Identifiant du type du terrain
-*/
 int GetLayerIDFromChar(char c){
 	switch(c){
 		case 'G':
@@ -263,26 +274,13 @@ int GetLayerIDFromChar(char c){
 		default:
 			return -1;
 
+		}
 	}
-}
 
-/**
- * \brief Remplie le champ de données génériques d'un noeud
- *
- * @param node Noeud à modifier
- * @param valeur Pointeur vers les données à ajouter
-*/
 void SetNodeData(node* node, void* valeur){
 	node->m_data = valeur;
 }
 
-/**
- * \brief Permet de récupérer les données génériques incrites dans un noeud. Note: ne retire pas les données du noeud
- *
- * @param node Noeud dont il faut récupérer les données
- *
- * @return Pointeur vers les données
-*/
 void* GetNodeData(node* node){
 	return node->m_data;
 }
