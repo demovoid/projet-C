@@ -17,7 +17,7 @@
  *
  * @return Pointeur sur un graphe
 */
-graph* LoadGraphFromFile(char* fichier){
+
 
 LIB_API	graph* LoadGraphFromFile(char* fichier){
 	
@@ -96,7 +96,7 @@ LIB_API	graph* LoadGraphFromFile(char* fichier){
 	
 		return monGraph;
 	}
-}
+
 
 /**
  * \brief Libère la mémoire allouée pour le graph
