@@ -1,3 +1,4 @@
 ﻿  main.c
-D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\main.c(1,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\main.c(72,16): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\main.c(72,16): message : les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
   Projet3AS1.vcxproj -> D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\Projet3AS1.exe
