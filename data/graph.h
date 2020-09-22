@@ -58,17 +58,20 @@ struct sNode
 	unsigned char m_layer; //Masque du type de terrain (egroundmask)
 	char m_layerID; //L'ID du type de terrain (egroundid)
 	node* m_neighbors[4]; //Tableau statique des 4 voisins (haut bas gauche droite) du noeud
-	void* m_data; //Pointeur générique  
+	void* m_data; //Pointeur gï¿½nï¿½rique  
 };
 
 struct sDijkstraNode
 {
 	node* m_node; //Noeud initial	
-	int m_distance; //Distance parcourue depuis le départ
-	char m_flag; //Noeud déjà traitéo ou non
-	node* m_prev; //Noeud précédent
+	int m_distance; //Distance parcourue depuis le dï¿½part
+	char m_flag; //Noeud dï¿½jï¿½ traitï¿½o ou non
+	node* m_prev; //Noeud prï¿½cï¿½dent
 };
 
 graph* LoadGraphFromFile(char* fichier);
-
 void freeGraph(graph* monGraph);
+int GetLayerIDFromChar(char c);
+
+void SetNodeData(node* node, void* valeur);
+void* GetNodeData(node* node);

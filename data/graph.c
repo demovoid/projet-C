@@ -91,3 +91,31 @@ void freeGraph(graph* monGraph){
 	free(monGraph->m_data);
 	free(monGraph);
 }
+
+int GetLayerIDFromChar(char c){
+	switch(c){
+		case 'G':
+			return GRASS_ID;
+		case 'F':
+			return FOREST_ID;
+		case 'M':
+			return MOUNTAIN_ID;
+		case 'C':
+			return CITY_ID;
+		case 'R':
+			return ROAD_ID;
+		case 'W':
+			return WATER_ID;
+		default:
+			return NOTHING;
+
+	}
+}
+
+void SetNodeData(node* node, void* valeur){
+	node->m_data = valeur;
+}
+
+void* GetNodeData(node* node){
+	return node->m_data;
+}
