@@ -1,10 +1,11 @@
-#pragma once
+#ifndef _GRAPH_H_
+#define _GRAPH_H
 
 #ifdef _GRAPH_C_
 #define	LIB_API	__declspec(dllexport)
 #else
 #define	LIB_API	__declspec(dllimport)
-#endif // _GRAPH_C_
+#endif // _LIB_C_
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -47,14 +48,15 @@ enum eGroundMask
 */
 enum eGroundID
 {
-	GRASS_ID,
-	FOREST_ID,
-	MOUNTAIN_ID,
-	CITY_ID,
-	ROAD_ID,
-	WATER_ID,
-	NB_GROUND
+	GRASS_ID, /**< 0 = Herbe */
+	FOREST_ID, /**< 1 = Foret */
+	MOUNTAIN_ID, /**< 2 = Montagne */
+	CITY_ID, /**< 3 = Ville */
+	ROAD_ID, /**< 4 = Route */
+	WATER_ID, /**< 5 = Eau */
+	NB_GROUND /**< 6 = nombre de terrain possible */
 };
+
 
 static const char s_groundChar[NB_GROUND] = {
 	'G',
@@ -64,6 +66,15 @@ static const char s_groundChar[NB_GROUND] = {
 	'R',
 	'W'
 }; /**< Caractère pour identifier un terrain */
+
+enum eNeighbourPosition
+{
+	NP_UP,
+	NP_LEFT,
+	NP_RIGHT,
+	NP_DOWN,
+	NB_NEIGHBORS
+};
 
 /**
  * \struct sGraph
@@ -82,12 +93,12 @@ struct sGraph
 */
 struct sNode
 {
-	int m_id; /**< Identifiant du noeud */
+	unsigned int m_id; /**< Identifiant du noeud */
 	unsigned char m_posX; /**< Position du noeud abscisses(longueur) */
 	unsigned char m_posY; /**< Position du noeud ordonnées(hauteur) */
 	unsigned char m_layer; /**< Masque du noeud (type de terrain) */
-	unsigned char m_layerID; /**< Identifiant du masque (id du terrain) */
-	node* m_neighbors[4]; /**< Les voisins du noeud (NULL = pas de voisin). 0: Voisin nord, 1: voisin ouest, 2: voisin est, 3: voisin sud */
+	unsigned int m_layerID; /**< Identifiant du masque (id du terrain) */
+	node* m_neighbors[NB_NEIGHBORS]; /**< Les voisins du noeud (NULL = pas de voisin). 0: Voisin nord, 1: voisin ouest, 2: voisin est, 3: voisin sud */
 	void* m_data; /**< Pointeur générique de données. Permet de stocker n'importe quoi */
 };
 
@@ -99,8 +110,8 @@ struct sDijkstraNode
 {
 	node* m_node; /**< Le noeud correspondant aux données de la structure */	
 	int m_distance; /**< Distance parcourue entre le point de départ et ce noeud */
-	char m_flag; /**< Indique si le noeud a déjà été parcouru */
-	node* m_prev; /**< Noeud précédent (chemin) */
+	unsigned char m_flag; /**< Indique si le noeud a déjà été parcouru */
+	dijkstraNode* m_prev; /**< Noeud précédent (chemin) */
 };
 
 LIB_API	graph* LoadGraphFromFile(char* fichier);
@@ -114,3 +125,5 @@ LIB_API	int GetLayerIDFromChar(char character);
 LIB_API	char IsNeighbour(node* a, node* b);
 LIB_API	void SetNodeData(node* noeud, void* data); //mettre data dans le champ de noeud
 LIB_API	void* GetNodeData(node* noeud);
+
+#endif

@@ -1,13 +1,10 @@
 ﻿  graph.c
-D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(161,30): warning C4133: '=' : types incompatibles - de 'node *' à 'dijkstraNode *'
-D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(164,30): warning C4133: '=' : types incompatibles - de 'dijkstraNode *' à 'node *'
 D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(248): warning C4715: 'IsNeighbour' : les chemins de contrôle ne retournent pas tous une valeur
-  LINK : D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\Projet3AS1.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
-     Création de la bibliothèque D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\Projet3AS1.lib et de l'objet D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\Projet3AS1.exp
+     Création de la bibliothèque D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\graph.lib et de l'objet D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\graph.exp
 LINK : warning LNK4217: le symbole '_LoadGraphFromFile' défini dans 'graph.obj' est importé par 'main.obj' dans la fonction '_main'
 LINK : warning LNK4217: le symbole '_freeGraph' défini dans 'graph.obj' est importé par 'main.obj' dans la fonction '_main'
 LINK : warning LNK4217: le symbole '_GetLayerIDFromChar' défini dans 'graph.obj' est importé par 'main.obj' dans la fonction '_main'
 LINK : warning LNK4217: le symbole '_Dijkstra' défini dans 'graph.obj' est importé par 'main.obj' dans la fonction '_main'
 LINK : warning LNK4217: le symbole '_FreeDijkstra' défini dans 'graph.obj' est importé par 'main.obj' dans la fonction '_main'
 LINK : warning LNK4217: le symbole '_GetNodeFromPosition' défini dans 'graph.obj' est importé par 'main.obj' dans la fonction '_main'
-  Projet3AS1.vcxproj -> D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\Projet3AS1.exe
+  Projet3AS1.vcxproj -> D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\graph.dll

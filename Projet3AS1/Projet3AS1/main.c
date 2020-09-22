@@ -1,5 +1,4 @@
 #include "graph.h"
-
 #include <string.h>
 
 void afficherGraphByTID(graph* g){
@@ -69,7 +68,7 @@ int main(int argc, char** argv){
 	printf("Pointeur: %p\n",monGraph);
 	printf("Dim: %d %d\n\n", monGraph->m_sizeX, monGraph->m_sizeY);
 	afficherGraphByID(monGraph);
-	printf("\n\n",monGraph);
+	printf("\n\n");
 	afficherGraphByTID(monGraph);
 	
 	printf("\n");	

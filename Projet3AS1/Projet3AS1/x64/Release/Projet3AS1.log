@@ -1,0 +1,13 @@
+﻿  graph.c
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(161,30): warning C4133: '=' : types incompatibles - de 'node *' à 'dijkstraNode *'
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(164,30): warning C4133: '=' : types incompatibles - de 'dijkstraNode *' à 'node *'
+  main.c
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\main.c(72,16): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\main.c(72,16): message : les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
+     Création de la bibliothèque D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\x64\Release\Projet3AS1.lib et de l'objet D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\x64\Release\Projet3AS1.exp
+  Génération de code en cours
+  Previous IPDB not found, fall back to full compilation.
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(248): warning C4715: 'IsNeighbour' : les chemins de contrôle ne retournent pas tous une valeur
+  All 14 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  Projet3AS1.vcxproj -> D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\x64\Release\Projet3AS1.dll
