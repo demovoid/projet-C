@@ -1,4 +1,9 @@
-﻿  main.c
+﻿  graph.c
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(127,29): warning C4133: '=' : types incompatibles - de 'node *' à 'dijkstraNode *'
+D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(130,29): warning C4133: '=' : types incompatibles - de 'dijkstraNode *' à 'node *'
+  main.c
 D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\main.c(72,16): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
 D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\main.c(72,16): message : les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
+  Génération de code en cours...
+  LINK : D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\Projet3AS1.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
   Projet3AS1.vcxproj -> D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Debug\Projet3AS1.exe
