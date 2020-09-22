@@ -96,6 +96,7 @@ LIB_API	graph* LoadGraphFromFile(char* fichier){
 	
 		return monGraph;
 	}
+}
 
 /**
  * \brief Libère la mémoire allouée pour le graph
@@ -177,7 +178,7 @@ LIB_API	dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
  * @param d Tableau de noeux issu de l'algo de Dijkstra
  * @param size Nombre de cases allouées dans le tableau
 */
-LIB_API	void FreeDijkstra(dijkstraNode** d, graph* g){
+LIB_API	void FreeDijkstra(dijkstraNode** d, int size){
 		if(!d)
 			return;
 	
@@ -244,6 +245,7 @@ LIB_API	char IsNeighbour(node* a, node* b)
 		}
 		return 0;
 	}
+}
 
 int GetLayerIDFromChar(char c){
 	switch(c){
