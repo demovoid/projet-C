@@ -2,12 +2,14 @@
 
 dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 {
-
+	int nbCells = G->m_sizeX * G->m_sizeY;
+	dijkstraNode* nd = (dijkstraNode*)calloc(1, sizeof(dijkstraNode));
+	
 }
 
 node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y)
 {
-	if(X < G->m_sizeX && Y < G->m_sizeY)
+	if(X < (unsigned int)G->m_sizeX && Y < (unsigned int)G->m_sizeY)
 		return G->m_data[Y * G->m_sizeX + X];
 	return NULL;
 }
@@ -29,7 +31,7 @@ char IsNeighbour(node* a, node* b)
 	{
 		if (a->m_neighbors[i])
 		{
-			if (a->m_neighbors[i]->m_id == b->m_id)
+			if (a->m_neighbors[i] == b)
 				return 1;
 		}
 	}
