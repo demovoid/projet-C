@@ -122,18 +122,6 @@ LIB_API	void freeGraph(graph* monGraph){
  *
  * @return Tableau de noeud avec les caractisques calculées par l'algo de Dijkstra
 */
-dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
-{
-	int nbCells = G->m_sizeX * G->m_sizeY;
-	dijkstraNode** nd = malloc(sizeof(dijkstraNode*) * nbCells);
-	for(int i = 0; i < nbCells; i++){
-		nd[i] = malloc(sizeof(dijkstraNode));
-		nd[i]->m_node = G->m_data[i]; 
-		nd[i]->m_distance = INFINITY_DIST;
-		nd[i]->m_flag = 0; 
-		nd[i]->m_prev = NULL;
-	}
-
 LIB_API	dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 	{
 		int nbCells = G->m_sizeX * G->m_sizeY;

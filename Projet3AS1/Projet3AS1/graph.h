@@ -107,7 +107,7 @@ LIB_API	graph* LoadGraphFromFile(char* fichier);
 LIB_API	void freeGraph(graph* monGraph);
 LIB_API	int GetLayerIDFromChar(char c);
 LIB_API	dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask);
-LIB_API	void FreeDijkstra(dijkstraNode** d, graph* g);
+LIB_API	void FreeDijkstra(dijkstraNode** d, int size);
 LIB_API	node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y);
 LIB_API	int GetManhattanDistance(node* a, node* b);
 LIB_API	int GetLayerIDFromChar(char character);
