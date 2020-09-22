@@ -19,6 +19,12 @@ struct \mbox{\hyperlink{structs_dijkstra_node}{s\+Dijkstra\+Node}}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{graph_8h_a995ac466281efa30720fd97478c57f97}\label{graph_8h_a995ac466281efa30720fd97478c57f97}} 
+\#define {\bfseries \+\_\+\+G\+R\+A\+P\+H\+\_\+H}
+\item 
+\mbox{\Hypertarget{graph_8h_a77278c8cc96e39fb27b5d0a347c8fb3d}\label{graph_8h_a77278c8cc96e39fb27b5d0a347c8fb3d}} 
+\#define {\bfseries L\+I\+B\+\_\+\+A\+PI}~\+\_\+\+\_\+declspec(dllimport)
+\item 
 \#define \mbox{\hyperlink{graph_8h_a09f9a496ac53a428037fb6810e0db555}{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+D\+I\+ST}}~0x\+F\+F\+FF
 \end{DoxyCompactItemize}
 \doxysubsection*{Définitions de type}
@@ -48,41 +54,52 @@ enum \mbox{\hyperlink{graph_8h_a6947a4328aa694f3e863737a888ef22c}{e\+Ground\+Mas
 \mbox{\hyperlink{graph_8h_a6947a4328aa694f3e863737a888ef22ca2c907db530c793291897c14cb281a721}{E\+V\+E\+R\+Y\+T\+H\+I\+NG}} = 0b11111111
  \}
 \begin{DoxyCompactList}\small\item\em Valeur des masques pour les types de terrains. A additionner pour avoir un masque d\textquotesingle{}autorisation de déplacement dans le graphe. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42}} 
 enum \mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42}{e\+Ground\+ID}} \{ \newline
-{\bfseries G\+R\+A\+S\+S\+\_\+\+ID}, 
-{\bfseries F\+O\+R\+E\+S\+T\+\_\+\+ID}, 
-{\bfseries M\+O\+U\+N\+T\+A\+I\+N\+\_\+\+ID}, 
-{\bfseries C\+I\+T\+Y\+\_\+\+ID}, 
+\mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a3a0aca18a26fe2bfce379e71883cf9d5}{G\+R\+A\+S\+S\+\_\+\+ID}}, 
+\mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a11614c27ca20411a2f546ac533c67717}{F\+O\+R\+E\+S\+T\+\_\+\+ID}}, 
+\mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a769b767c03a24d9834708055db520b97}{M\+O\+U\+N\+T\+A\+I\+N\+\_\+\+ID}}, 
+\mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a9da2b6d1d5e11a6f6a0243d1618e6551}{C\+I\+T\+Y\+\_\+\+ID}}, 
 \newline
-{\bfseries R\+O\+A\+D\+\_\+\+ID}, 
-{\bfseries W\+A\+T\+E\+R\+\_\+\+ID}, 
-{\bfseries N\+B\+\_\+\+G\+R\+O\+U\+ND}
+\mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42ad94fb8f1123e67fba58f809790eb4ceb}{R\+O\+A\+D\+\_\+\+ID}}, 
+\mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a7f0fb6d7773182bda54427117b601286}{W\+A\+T\+E\+R\+\_\+\+ID}}, 
+\mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42afeb18035ccb1c517b63e9c5908cda21b}{N\+B\+\_\+\+G\+R\+O\+U\+ND}}
  \}
-\begin{DoxyCompactList}\small\item\em Identifiants des types de terrains. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Identifiants des types de terrains. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8e}{e\+Neighbour\+Position}} \{ \newline
+\mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8eaccde8d4587c5bf20424632c6fda76595}{N\+P\+\_\+\+UP}}, 
+\mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8eabe2138aa713d4db671949253acaefdca}{N\+P\+\_\+\+L\+E\+FT}}, 
+\mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea29ea5e3442afc7b3cbf2628db7dabaf5}{N\+P\+\_\+\+R\+I\+G\+HT}}, 
+\mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea605b2ef4dd8c4c5fdf2d8356ef7e929f}{N\+P\+\_\+\+D\+O\+WN}}, 
+\newline
+\mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea1ce81f86217194475601cbe44106dd24}{N\+B\+\_\+\+N\+E\+I\+G\+H\+B\+O\+RS}}
+ \}
+\begin{DoxyCompactList}\small\item\em Indique l\textquotesingle{}emplacement du voisin par un nom plutot qu\textquotesingle{}une valeur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structs_graph}{graph}} $\ast$ \mbox{\hyperlink{graph_8h_a693b5b93e5d105458a65ca7421ea7f2b}{Load\+Graph\+From\+File}} (char $\ast$fichier)
+L\+I\+B\+\_\+\+A\+PI \mbox{\hyperlink{structs_graph}{graph}} $\ast$ \mbox{\hyperlink{graph_8h_a1cdc303d1ed42f64558d78b5be93b0a4}{Load\+Graph\+From\+File}} (char $\ast$fichier)
 \begin{DoxyCompactList}\small\item\em Charge le graphe depuis un fichier donné \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{graph_8h_a8557f0a0b7d7fab7d03d0ca45f5967a7}{free\+Graph}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$mon\+Graph)
+L\+I\+B\+\_\+\+A\+PI void \mbox{\hyperlink{graph_8h_a0ee65c615ddaf01f0f3bac5796fd55e5}{free\+Graph}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$mon\+Graph)
 \begin{DoxyCompactList}\small\item\em Libère la mémoire allouée pour le graph. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{graph_8h_a6e62240b8e22133f69f952fc28efefc8}{Get\+Layer\+I\+D\+From\+Char}} (char c)
-\begin{DoxyCompactList}\small\item\em Permet de récupérer l\textquotesingle{}identifiant d\textquotesingle{}un terrain à partir de sa lettre. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$ \mbox{\hyperlink{graph_8h_a28a43b1d0500890b3dc9c4f1f3f0d165}{Dijkstra}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$G, \mbox{\hyperlink{structs_node}{node}} $\ast$init, unsigned char mask)
+\mbox{\Hypertarget{graph_8h_af4a764976f5875eaf6a51f7d834e8231}\label{graph_8h_af4a764976f5875eaf6a51f7d834e8231}} 
+L\+I\+B\+\_\+\+A\+PI int {\bfseries Get\+Layer\+I\+D\+From\+Char} (char c)
+\item 
+L\+I\+B\+\_\+\+A\+PI \mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$ \mbox{\hyperlink{graph_8h_a3e8ace2034c7e9a470dd25b61dbdfd43}{Dijkstra}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$G, \mbox{\hyperlink{structs_node}{node}} $\ast$init, unsigned char mask)
 \begin{DoxyCompactList}\small\item\em Applique l\textquotesingle{}algorithme de Dijkstra à un graphe. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{graph_8h_a4e17c485ee2be730b2327b7f69e7e679}{Free\+Dijkstra}} (\mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$d, int size)
+L\+I\+B\+\_\+\+A\+PI void \mbox{\hyperlink{graph_8h_a6599a18bb91d1285eee084b4f6afc424}{Free\+Dijkstra}} (\mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$d, int size)
 \begin{DoxyCompactList}\small\item\em Libère la mémoire allouée par Dijkstra. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structs_node}{node}} $\ast$ \mbox{\hyperlink{graph_8h_aa30365622ef96a1916abc8cea3f373f9}{Get\+Node\+From\+Position}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$G, unsigned char X, unsigned char Y)
+L\+I\+B\+\_\+\+A\+PI \mbox{\hyperlink{structs_node}{node}} $\ast$ \mbox{\hyperlink{graph_8h_a32f566c776834d79ccab10992470eb87}{Get\+Node\+From\+Position}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$G, unsigned char X, unsigned char Y)
 \begin{DoxyCompactList}\small\item\em Permet de récuperer la position d\textquotesingle{}un noeud dans un graphe. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{graph_8h_a50c57d37730aa46f2c13dca1ad25ff8b}{Get\+Manhattan\+Distance}} (\mbox{\hyperlink{structs_node}{node}} $\ast$a, \mbox{\hyperlink{structs_node}{node}} $\ast$b)
+L\+I\+B\+\_\+\+A\+PI int \mbox{\hyperlink{graph_8h_addd11308d5ee207ba553f030e77acf0c}{Get\+Manhattan\+Distance}} (\mbox{\hyperlink{structs_node}{node}} $\ast$a, \mbox{\hyperlink{structs_node}{node}} $\ast$b)
 \begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la distance de Manhattan entre deux noeux. \end{DoxyCompactList}\item 
-char \mbox{\hyperlink{graph_8h_ad9411f4072f830baa6e532aa13c4f41a}{Is\+Neighbour}} (\mbox{\hyperlink{structs_node}{node}} $\ast$a, \mbox{\hyperlink{structs_node}{node}} $\ast$b)
+L\+I\+B\+\_\+\+A\+PI char \mbox{\hyperlink{graph_8h_a299a9b982b74fd4e142dec41c1d9f26b}{Is\+Neighbour}} (\mbox{\hyperlink{structs_node}{node}} $\ast$a, \mbox{\hyperlink{structs_node}{node}} $\ast$b)
 \begin{DoxyCompactList}\small\item\em Verifie si deux noeud sont voisins. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{graph_8h_a1d7d61588cb2d028217d4831472d2b5e}{Set\+Node\+Data}} (\mbox{\hyperlink{structs_node}{node}} $\ast$noeud, void $\ast$data)
-\begin{DoxyCompactList}\small\item\em Remplie le champ de données génériques d\textquotesingle{}un noeud. \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{graph_8h_a88e7acb04b2aa093d4cb3bf6b1a80f43}{Get\+Node\+Data}} (\mbox{\hyperlink{structs_node}{node}} $\ast$noeud)
-\begin{DoxyCompactList}\small\item\em Permet de récupérer les données génériques incrites dans un noeud. Note\+: ne retire pas les données du noeud. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{graph_8h_ac8b67b5d915dd12dfbf2b116bce3b49b}\label{graph_8h_ac8b67b5d915dd12dfbf2b116bce3b49b}} 
+L\+I\+B\+\_\+\+A\+PI void {\bfseries Set\+Node\+Data} (\mbox{\hyperlink{structs_node}{node}} $\ast$noeud, void $\ast$data)
+\item 
+\mbox{\Hypertarget{graph_8h_aca9d333e713273749c140e99ab0a94d3}\label{graph_8h_aca9d333e713273749c140e99ab0a94d3}} 
+L\+I\+B\+\_\+\+A\+PI void $\ast$ {\bfseries Get\+Node\+Data} (\mbox{\hyperlink{structs_node}{node}} $\ast$noeud)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -109,6 +126,46 @@ D\+I\+D\+I\+ER Thomas et R\+O\+U\+S\+S\+E\+AU Martin
 Valeur pour caractériser l\textquotesingle{}impossibilité d\textquotesingle{}accès au sommet 
 
 \doxysubsection{Documentation du type de l\textquotesingle{}énumération}
+\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42}} 
+\index{graph.h@{graph.h}!eGroundID@{eGroundID}}
+\index{eGroundID@{eGroundID}!graph.h@{graph.h}}
+\doxysubsubsection{\texorpdfstring{eGroundID}{eGroundID}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42}{e\+Ground\+ID}}}
+
+
+
+Identifiants des types de terrains. 
+
+\begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRASS\_ID@{GRASS\_ID}!graph.h@{graph.h}}\index{graph.h@{graph.h}!GRASS\_ID@{GRASS\_ID}}}\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a3a0aca18a26fe2bfce379e71883cf9d5}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a3a0aca18a26fe2bfce379e71883cf9d5}} 
+G\+R\+A\+S\+S\+\_\+\+ID&0 = Herbe \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FOREST\_ID@{FOREST\_ID}!graph.h@{graph.h}}\index{graph.h@{graph.h}!FOREST\_ID@{FOREST\_ID}}}\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a11614c27ca20411a2f546ac533c67717}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a11614c27ca20411a2f546ac533c67717}} 
+F\+O\+R\+E\+S\+T\+\_\+\+ID&1 = Foret \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUNTAIN\_ID@{MOUNTAIN\_ID}!graph.h@{graph.h}}\index{graph.h@{graph.h}!MOUNTAIN\_ID@{MOUNTAIN\_ID}}}\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a769b767c03a24d9834708055db520b97}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a769b767c03a24d9834708055db520b97}} 
+M\+O\+U\+N\+T\+A\+I\+N\+\_\+\+ID&2 = Montagne \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CITY\_ID@{CITY\_ID}!graph.h@{graph.h}}\index{graph.h@{graph.h}!CITY\_ID@{CITY\_ID}}}\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a9da2b6d1d5e11a6f6a0243d1618e6551}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a9da2b6d1d5e11a6f6a0243d1618e6551}} 
+C\+I\+T\+Y\+\_\+\+ID&3 = Ville \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROAD\_ID@{ROAD\_ID}!graph.h@{graph.h}}\index{graph.h@{graph.h}!ROAD\_ID@{ROAD\_ID}}}\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42ad94fb8f1123e67fba58f809790eb4ceb}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42ad94fb8f1123e67fba58f809790eb4ceb}} 
+R\+O\+A\+D\+\_\+\+ID&4 = Route \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WATER\_ID@{WATER\_ID}!graph.h@{graph.h}}\index{graph.h@{graph.h}!WATER\_ID@{WATER\_ID}}}\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a7f0fb6d7773182bda54427117b601286}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42a7f0fb6d7773182bda54427117b601286}} 
+W\+A\+T\+E\+R\+\_\+\+ID&5 = Eau \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NB\_GROUND@{NB\_GROUND}!graph.h@{graph.h}}\index{graph.h@{graph.h}!NB\_GROUND@{NB\_GROUND}}}\mbox{\Hypertarget{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42afeb18035ccb1c517b63e9c5908cda21b}\label{graph_8h_ae59bc6bf3bace7f148316dcae3da3c42afeb18035ccb1c517b63e9c5908cda21b}} 
+N\+B\+\_\+\+G\+R\+O\+U\+ND&6 = nombre de terrain possible \\
+\hline
+
+\end{DoxyEnumFields}
 \mbox{\Hypertarget{graph_8h_a6947a4328aa694f3e863737a888ef22c}\label{graph_8h_a6947a4328aa694f3e863737a888ef22c}} 
 \index{graph.h@{graph.h}!eGroundMask@{eGroundMask}}
 \index{eGroundMask@{eGroundMask}!graph.h@{graph.h}}
@@ -153,14 +210,46 @@ E\+V\+E\+R\+Y\+T\+H\+I\+NG&Tout \\
 \hline
 
 \end{DoxyEnumFields}
+\mbox{\Hypertarget{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8e}\label{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8e}} 
+\index{graph.h@{graph.h}!eNeighbourPosition@{eNeighbourPosition}}
+\index{eNeighbourPosition@{eNeighbourPosition}!graph.h@{graph.h}}
+\doxysubsubsection{\texorpdfstring{eNeighbourPosition}{eNeighbourPosition}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8e}{e\+Neighbour\+Position}}}
+
+
+
+Indique l\textquotesingle{}emplacement du voisin par un nom plutot qu\textquotesingle{}une valeur. 
+
+\begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NP\_UP@{NP\_UP}!graph.h@{graph.h}}\index{graph.h@{graph.h}!NP\_UP@{NP\_UP}}}\mbox{\Hypertarget{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8eaccde8d4587c5bf20424632c6fda76595}\label{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8eaccde8d4587c5bf20424632c6fda76595}} 
+N\+P\+\_\+\+UP&0 = Voisin du dessus \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NP\_LEFT@{NP\_LEFT}!graph.h@{graph.h}}\index{graph.h@{graph.h}!NP\_LEFT@{NP\_LEFT}}}\mbox{\Hypertarget{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8eabe2138aa713d4db671949253acaefdca}\label{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8eabe2138aa713d4db671949253acaefdca}} 
+N\+P\+\_\+\+L\+E\+FT&1 = Voisin de gauche \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NP\_RIGHT@{NP\_RIGHT}!graph.h@{graph.h}}\index{graph.h@{graph.h}!NP\_RIGHT@{NP\_RIGHT}}}\mbox{\Hypertarget{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea29ea5e3442afc7b3cbf2628db7dabaf5}\label{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea29ea5e3442afc7b3cbf2628db7dabaf5}} 
+N\+P\+\_\+\+R\+I\+G\+HT&2 = Voisin de droite \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NP\_DOWN@{NP\_DOWN}!graph.h@{graph.h}}\index{graph.h@{graph.h}!NP\_DOWN@{NP\_DOWN}}}\mbox{\Hypertarget{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea605b2ef4dd8c4c5fdf2d8356ef7e929f}\label{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea605b2ef4dd8c4c5fdf2d8356ef7e929f}} 
+N\+P\+\_\+\+D\+O\+WN&3 = Voisin du dessous \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NB\_NEIGHBORS@{NB\_NEIGHBORS}!graph.h@{graph.h}}\index{graph.h@{graph.h}!NB\_NEIGHBORS@{NB\_NEIGHBORS}}}\mbox{\Hypertarget{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea1ce81f86217194475601cbe44106dd24}\label{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea1ce81f86217194475601cbe44106dd24}} 
+N\+B\+\_\+\+N\+E\+I\+G\+H\+B\+O\+RS&4 = Nombre de voisins \\
+\hline
+
+\end{DoxyEnumFields}
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{graph_8h_a28a43b1d0500890b3dc9c4f1f3f0d165}\label{graph_8h_a28a43b1d0500890b3dc9c4f1f3f0d165}} 
+\mbox{\Hypertarget{graph_8h_a3e8ace2034c7e9a470dd25b61dbdfd43}\label{graph_8h_a3e8ace2034c7e9a470dd25b61dbdfd43}} 
 \index{graph.h@{graph.h}!Dijkstra@{Dijkstra}}
 \index{Dijkstra@{Dijkstra}!graph.h@{graph.h}}
 \doxysubsubsection{\texorpdfstring{Dijkstra()}{Dijkstra()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}}$\ast$$\ast$ Dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{G,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{init,  }\item[{unsigned char}]{mask }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily L\+I\+B\+\_\+\+A\+PI \mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}}$\ast$$\ast$ Dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{G,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{init,  }\item[{unsigned char}]{mask }\end{DoxyParamCaption})}
 
 
 
@@ -178,11 +267,11 @@ Applique l\textquotesingle{}algorithme de Dijkstra à un graphe.
 \begin{DoxyReturn}{Renvoie}
 Tableau de noeud avec les caractisques calculées par l\textquotesingle{}algo de Dijkstra 
 \end{DoxyReturn}
-\mbox{\Hypertarget{graph_8h_a4e17c485ee2be730b2327b7f69e7e679}\label{graph_8h_a4e17c485ee2be730b2327b7f69e7e679}} 
+\mbox{\Hypertarget{graph_8h_a6599a18bb91d1285eee084b4f6afc424}\label{graph_8h_a6599a18bb91d1285eee084b4f6afc424}} 
 \index{graph.h@{graph.h}!FreeDijkstra@{FreeDijkstra}}
 \index{FreeDijkstra@{FreeDijkstra}!graph.h@{graph.h}}
 \doxysubsubsection{\texorpdfstring{FreeDijkstra()}{FreeDijkstra()}}
-{\footnotesize\ttfamily void Free\+Dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$}]{d,  }\item[{int}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily L\+I\+B\+\_\+\+A\+PI void Free\+Dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$}]{d,  }\item[{int}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -195,11 +284,11 @@ Libère la mémoire allouée par Dijkstra.
 {\em size} & Nombre de cases allouées dans le tableau \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{graph_8h_a8557f0a0b7d7fab7d03d0ca45f5967a7}\label{graph_8h_a8557f0a0b7d7fab7d03d0ca45f5967a7}} 
+\mbox{\Hypertarget{graph_8h_a0ee65c615ddaf01f0f3bac5796fd55e5}\label{graph_8h_a0ee65c615ddaf01f0f3bac5796fd55e5}} 
 \index{graph.h@{graph.h}!freeGraph@{freeGraph}}
 \index{freeGraph@{freeGraph}!graph.h@{graph.h}}
 \doxysubsubsection{\texorpdfstring{freeGraph()}{freeGraph()}}
-{\footnotesize\ttfamily void free\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{mon\+Graph }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily L\+I\+B\+\_\+\+A\+PI void free\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{mon\+Graph }\end{DoxyParamCaption})}
 
 
 
@@ -210,29 +299,11 @@ Libère la mémoire allouée pour le graph.
 {\em mon\+Graph} & Graphe à libérer \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{graph_8h_a6e62240b8e22133f69f952fc28efefc8}\label{graph_8h_a6e62240b8e22133f69f952fc28efefc8}} 
-\index{graph.h@{graph.h}!GetLayerIDFromChar@{GetLayerIDFromChar}}
-\index{GetLayerIDFromChar@{GetLayerIDFromChar}!graph.h@{graph.h}}
-\doxysubsubsection{\texorpdfstring{GetLayerIDFromChar()}{GetLayerIDFromChar()}}
-{\footnotesize\ttfamily int Get\+Layer\+I\+D\+From\+Char (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
-
-
-
-Permet de récupérer l\textquotesingle{}identifiant d\textquotesingle{}un terrain à partir de sa lettre. 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em c} & Charactère correspondant au terrain (voir s\+\_\+ground\+Char)\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-Identifiant du type du terrain 
-\end{DoxyReturn}
-\mbox{\Hypertarget{graph_8h_a50c57d37730aa46f2c13dca1ad25ff8b}\label{graph_8h_a50c57d37730aa46f2c13dca1ad25ff8b}} 
+\mbox{\Hypertarget{graph_8h_addd11308d5ee207ba553f030e77acf0c}\label{graph_8h_addd11308d5ee207ba553f030e77acf0c}} 
 \index{graph.h@{graph.h}!GetManhattanDistance@{GetManhattanDistance}}
 \index{GetManhattanDistance@{GetManhattanDistance}!graph.h@{graph.h}}
 \doxysubsubsection{\texorpdfstring{GetManhattanDistance()}{GetManhattanDistance()}}
-{\footnotesize\ttfamily int Get\+Manhattan\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{b }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily L\+I\+B\+\_\+\+A\+PI int Get\+Manhattan\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -248,29 +319,11 @@ Permet d\textquotesingle{}obtenir la distance de Manhattan entre deux noeux.
 \begin{DoxyReturn}{Renvoie}
 La distance de Manhattan entre les deux noeud 
 \end{DoxyReturn}
-\mbox{\Hypertarget{graph_8h_a88e7acb04b2aa093d4cb3bf6b1a80f43}\label{graph_8h_a88e7acb04b2aa093d4cb3bf6b1a80f43}} 
-\index{graph.h@{graph.h}!GetNodeData@{GetNodeData}}
-\index{GetNodeData@{GetNodeData}!graph.h@{graph.h}}
-\doxysubsubsection{\texorpdfstring{GetNodeData()}{GetNodeData()}}
-{\footnotesize\ttfamily void$\ast$ Get\+Node\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{node }\end{DoxyParamCaption})}
-
-
-
-Permet de récupérer les données génériques incrites dans un noeud. Note\+: ne retire pas les données du noeud. 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em node} & Noeud dont il faut récupérer les données\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-Pointeur vers les données 
-\end{DoxyReturn}
-\mbox{\Hypertarget{graph_8h_aa30365622ef96a1916abc8cea3f373f9}\label{graph_8h_aa30365622ef96a1916abc8cea3f373f9}} 
+\mbox{\Hypertarget{graph_8h_a32f566c776834d79ccab10992470eb87}\label{graph_8h_a32f566c776834d79ccab10992470eb87}} 
 \index{graph.h@{graph.h}!GetNodeFromPosition@{GetNodeFromPosition}}
 \index{GetNodeFromPosition@{GetNodeFromPosition}!graph.h@{graph.h}}
 \doxysubsubsection{\texorpdfstring{GetNodeFromPosition()}{GetNodeFromPosition()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structs_node}{node}}$\ast$ Get\+Node\+From\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{G,  }\item[{unsigned char}]{X,  }\item[{unsigned char}]{Y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily L\+I\+B\+\_\+\+A\+PI \mbox{\hyperlink{structs_node}{node}}$\ast$ Get\+Node\+From\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{G,  }\item[{unsigned char}]{X,  }\item[{unsigned char}]{Y }\end{DoxyParamCaption})}
 
 
 
@@ -288,11 +341,11 @@ Permet de récuperer la position d\textquotesingle{}un noeud dans un graphe.
 \begin{DoxyReturn}{Renvoie}
 Pointeur sur le noeud recherché (s\textquotesingle{}il existe, N\+U\+LL sinon) 
 \end{DoxyReturn}
-\mbox{\Hypertarget{graph_8h_ad9411f4072f830baa6e532aa13c4f41a}\label{graph_8h_ad9411f4072f830baa6e532aa13c4f41a}} 
+\mbox{\Hypertarget{graph_8h_a299a9b982b74fd4e142dec41c1d9f26b}\label{graph_8h_a299a9b982b74fd4e142dec41c1d9f26b}} 
 \index{graph.h@{graph.h}!IsNeighbour@{IsNeighbour}}
 \index{IsNeighbour@{IsNeighbour}!graph.h@{graph.h}}
 \doxysubsubsection{\texorpdfstring{IsNeighbour()}{IsNeighbour()}}
-{\footnotesize\ttfamily char Is\+Neighbour (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{b }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily L\+I\+B\+\_\+\+A\+PI char Is\+Neighbour (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -308,11 +361,11 @@ Verifie si deux noeud sont voisins.
 \begin{DoxyReturn}{Renvoie}
 1 si les noeud sont voisins, 0 sinon 
 \end{DoxyReturn}
-\mbox{\Hypertarget{graph_8h_a693b5b93e5d105458a65ca7421ea7f2b}\label{graph_8h_a693b5b93e5d105458a65ca7421ea7f2b}} 
+\mbox{\Hypertarget{graph_8h_a1cdc303d1ed42f64558d78b5be93b0a4}\label{graph_8h_a1cdc303d1ed42f64558d78b5be93b0a4}} 
 \index{graph.h@{graph.h}!LoadGraphFromFile@{LoadGraphFromFile}}
 \index{LoadGraphFromFile@{LoadGraphFromFile}!graph.h@{graph.h}}
 \doxysubsubsection{\texorpdfstring{LoadGraphFromFile()}{LoadGraphFromFile()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structs_graph}{graph}}$\ast$ Load\+Graph\+From\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily L\+I\+B\+\_\+\+A\+PI \mbox{\hyperlink{structs_graph}{graph}}$\ast$ Load\+Graph\+From\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier }\end{DoxyParamCaption})}
 
 
 
@@ -326,20 +379,3 @@ Charge le graphe depuis un fichier donné
 \begin{DoxyReturn}{Renvoie}
 Pointeur sur un graphe 
 \end{DoxyReturn}
-\mbox{\Hypertarget{graph_8h_a1d7d61588cb2d028217d4831472d2b5e}\label{graph_8h_a1d7d61588cb2d028217d4831472d2b5e}} 
-\index{graph.h@{graph.h}!SetNodeData@{SetNodeData}}
-\index{SetNodeData@{SetNodeData}!graph.h@{graph.h}}
-\doxysubsubsection{\texorpdfstring{SetNodeData()}{SetNodeData()}}
-{\footnotesize\ttfamily void Set\+Node\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{node,  }\item[{void $\ast$}]{valeur }\end{DoxyParamCaption})}
-
-
-
-Remplie le champ de données génériques d\textquotesingle{}un noeud. 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em node} & Noeud à modifier \\
-\hline
-{\em valeur} & Pointeur vers les données à ajouter \\
-\hline
-\end{DoxyParams}

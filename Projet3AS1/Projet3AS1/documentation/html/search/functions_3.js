@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isneighbour_51',['IsNeighbour',['../graph_8c.html#ad9411f4072f830baa6e532aa13c4f41a',1,'IsNeighbour(node *a, node *b):&#160;graph.c'],['../graph_8h.html#ad9411f4072f830baa6e532aa13c4f41a',1,'IsNeighbour(node *a, node *b):&#160;graph.c']]]
+  ['isneighbour_59',['IsNeighbour',['../graph_8c.html#a299a9b982b74fd4e142dec41c1d9f26b',1,'IsNeighbour(node *a, node *b):&#160;graph.c'],['../graph_8h.html#a299a9b982b74fd4e142dec41c1d9f26b',1,'IsNeighbour(node *a, node *b):&#160;graph.c']]]
 ];

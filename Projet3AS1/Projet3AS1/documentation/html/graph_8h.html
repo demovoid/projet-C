@@ -94,6 +94,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a995ac466281efa30720fd97478c57f97"><td class="memItemLeft" align="right" valign="top"><a id="a995ac466281efa30720fd97478c57f97"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_GRAPH_H</b></td></tr>
+<tr class="separator:a995ac466281efa30720fd97478c57f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77278c8cc96e39fb27b5d0a347c8fb3d"><td class="memItemLeft" align="right" valign="top"><a id="a77278c8cc96e39fb27b5d0a347c8fb3d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LIB_API</b>&#160;&#160;&#160;__declspec(dllimport)</td></tr>
+<tr class="separator:a77278c8cc96e39fb27b5d0a347c8fb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09f9a496ac53a428037fb6810e0db555"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a09f9a496ac53a428037fb6810e0db555">INFINITY_DIST</a>&#160;&#160;&#160;0xFFFF</td></tr>
 <tr class="separator:a09f9a496ac53a428037fb6810e0db555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -125,52 +131,63 @@ typedef struct <a class="el" href="structs_node.html">sNode</a>&#160;</td><td cl
  }</td></tr>
 <tr class="memdesc:a6947a4328aa694f3e863737a888ef22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur des masques pour les types de terrains. A additionner pour avoir un masque d'autorisation de déplacement dans le graphe.  <a href="graph_8h.html#a6947a4328aa694f3e863737a888ef22c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a6947a4328aa694f3e863737a888ef22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae59bc6bf3bace7f148316dcae3da3c42"><td class="memItemLeft" align="right" valign="top"><a id="ae59bc6bf3bace7f148316dcae3da3c42"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42">eGroundID</a> { <br />
-&#160;&#160;<b>GRASS_ID</b>, 
-<b>FOREST_ID</b>, 
-<b>MOUNTAIN_ID</b>, 
-<b>CITY_ID</b>, 
+<tr class="memitem:ae59bc6bf3bace7f148316dcae3da3c42"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42">eGroundID</a> { <br />
+&#160;&#160;<a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42a3a0aca18a26fe2bfce379e71883cf9d5">GRASS_ID</a>, 
+<a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42a11614c27ca20411a2f546ac533c67717">FOREST_ID</a>, 
+<a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42a769b767c03a24d9834708055db520b97">MOUNTAIN_ID</a>, 
+<a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42a9da2b6d1d5e11a6f6a0243d1618e6551">CITY_ID</a>, 
 <br />
-&#160;&#160;<b>ROAD_ID</b>, 
-<b>WATER_ID</b>, 
-<b>NB_GROUND</b>
+&#160;&#160;<a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42ad94fb8f1123e67fba58f809790eb4ceb">ROAD_ID</a>, 
+<a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42a7f0fb6d7773182bda54427117b601286">WATER_ID</a>, 
+<a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42afeb18035ccb1c517b63e9c5908cda21b">NB_GROUND</a>
 <br />
  }</td></tr>
-<tr class="memdesc:ae59bc6bf3bace7f148316dcae3da3c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifiants des types de terrains. <br /></td></tr>
+<tr class="memdesc:ae59bc6bf3bace7f148316dcae3da3c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifiants des types de terrains.  <a href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae59bc6bf3bace7f148316dcae3da3c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5abcb5af5cd69929e84b67273fd7f8e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#ae5abcb5af5cd69929e84b67273fd7f8e">eNeighbourPosition</a> { <br />
+&#160;&#160;<a class="el" href="graph_8h.html#ae5abcb5af5cd69929e84b67273fd7f8eaccde8d4587c5bf20424632c6fda76595">NP_UP</a>, 
+<a class="el" href="graph_8h.html#ae5abcb5af5cd69929e84b67273fd7f8eabe2138aa713d4db671949253acaefdca">NP_LEFT</a>, 
+<a class="el" href="graph_8h.html#ae5abcb5af5cd69929e84b67273fd7f8ea29ea5e3442afc7b3cbf2628db7dabaf5">NP_RIGHT</a>, 
+<a class="el" href="graph_8h.html#ae5abcb5af5cd69929e84b67273fd7f8ea605b2ef4dd8c4c5fdf2d8356ef7e929f">NP_DOWN</a>, 
+<br />
+&#160;&#160;<a class="el" href="graph_8h.html#ae5abcb5af5cd69929e84b67273fd7f8ea1ce81f86217194475601cbe44106dd24">NB_NEIGHBORS</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ae5abcb5af5cd69929e84b67273fd7f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique l'emplacement du voisin par un nom plutot qu'une valeur.  <a href="graph_8h.html#ae5abcb5af5cd69929e84b67273fd7f8e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae5abcb5af5cd69929e84b67273fd7f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a693b5b93e5d105458a65ca7421ea7f2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_graph.html">graph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a693b5b93e5d105458a65ca7421ea7f2b">LoadGraphFromFile</a> (char *fichier)</td></tr>
-<tr class="memdesc:a693b5b93e5d105458a65ca7421ea7f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge le graphe depuis un fichier donné  <a href="graph_8h.html#a693b5b93e5d105458a65ca7421ea7f2b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a693b5b93e5d105458a65ca7421ea7f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8557f0a0b7d7fab7d03d0ca45f5967a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a8557f0a0b7d7fab7d03d0ca45f5967a7">freeGraph</a> (<a class="el" href="structs_graph.html">graph</a> *monGraph)</td></tr>
-<tr class="memdesc:a8557f0a0b7d7fab7d03d0ca45f5967a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée pour le graph.  <a href="graph_8h.html#a8557f0a0b7d7fab7d03d0ca45f5967a7">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8557f0a0b7d7fab7d03d0ca45f5967a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e62240b8e22133f69f952fc28efefc8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a6e62240b8e22133f69f952fc28efefc8">GetLayerIDFromChar</a> (char c)</td></tr>
-<tr class="memdesc:a6e62240b8e22133f69f952fc28efefc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récupérer l'identifiant d'un terrain à partir de sa lettre.  <a href="graph_8h.html#a6e62240b8e22133f69f952fc28efefc8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a6e62240b8e22133f69f952fc28efefc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28a43b1d0500890b3dc9c4f1f3f0d165"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_dijkstra_node.html">dijkstraNode</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a28a43b1d0500890b3dc9c4f1f3f0d165">Dijkstra</a> (<a class="el" href="structs_graph.html">graph</a> *G, <a class="el" href="structs_node.html">node</a> *init, unsigned char mask)</td></tr>
-<tr class="memdesc:a28a43b1d0500890b3dc9c4f1f3f0d165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique l'algorithme de Dijkstra à un graphe.  <a href="graph_8h.html#a28a43b1d0500890b3dc9c4f1f3f0d165">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a28a43b1d0500890b3dc9c4f1f3f0d165"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e17c485ee2be730b2327b7f69e7e679"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a4e17c485ee2be730b2327b7f69e7e679">FreeDijkstra</a> (<a class="el" href="structs_dijkstra_node.html">dijkstraNode</a> **d, int size)</td></tr>
-<tr class="memdesc:a4e17c485ee2be730b2327b7f69e7e679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée par Dijkstra.  <a href="graph_8h.html#a4e17c485ee2be730b2327b7f69e7e679">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a4e17c485ee2be730b2327b7f69e7e679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa30365622ef96a1916abc8cea3f373f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_node.html">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#aa30365622ef96a1916abc8cea3f373f9">GetNodeFromPosition</a> (<a class="el" href="structs_graph.html">graph</a> *G, unsigned char X, unsigned char Y)</td></tr>
-<tr class="memdesc:aa30365622ef96a1916abc8cea3f373f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récuperer la position d'un noeud dans un graphe.  <a href="graph_8h.html#aa30365622ef96a1916abc8cea3f373f9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aa30365622ef96a1916abc8cea3f373f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50c57d37730aa46f2c13dca1ad25ff8b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a50c57d37730aa46f2c13dca1ad25ff8b">GetManhattanDistance</a> (<a class="el" href="structs_node.html">node</a> *a, <a class="el" href="structs_node.html">node</a> *b)</td></tr>
-<tr class="memdesc:a50c57d37730aa46f2c13dca1ad25ff8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'obtenir la distance de Manhattan entre deux noeux.  <a href="graph_8h.html#a50c57d37730aa46f2c13dca1ad25ff8b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a50c57d37730aa46f2c13dca1ad25ff8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9411f4072f830baa6e532aa13c4f41a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#ad9411f4072f830baa6e532aa13c4f41a">IsNeighbour</a> (<a class="el" href="structs_node.html">node</a> *a, <a class="el" href="structs_node.html">node</a> *b)</td></tr>
-<tr class="memdesc:ad9411f4072f830baa6e532aa13c4f41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si deux noeud sont voisins.  <a href="graph_8h.html#ad9411f4072f830baa6e532aa13c4f41a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ad9411f4072f830baa6e532aa13c4f41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d7d61588cb2d028217d4831472d2b5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a1d7d61588cb2d028217d4831472d2b5e">SetNodeData</a> (<a class="el" href="structs_node.html">node</a> *noeud, void *data)</td></tr>
-<tr class="memdesc:a1d7d61588cb2d028217d4831472d2b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplie le champ de données génériques d'un noeud.  <a href="graph_8h.html#a1d7d61588cb2d028217d4831472d2b5e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a1d7d61588cb2d028217d4831472d2b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88e7acb04b2aa093d4cb3bf6b1a80f43"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a88e7acb04b2aa093d4cb3bf6b1a80f43">GetNodeData</a> (<a class="el" href="structs_node.html">node</a> *noeud)</td></tr>
-<tr class="memdesc:a88e7acb04b2aa093d4cb3bf6b1a80f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récupérer les données génériques incrites dans un noeud. Note: ne retire pas les données du noeud.  <a href="graph_8h.html#a88e7acb04b2aa093d4cb3bf6b1a80f43">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a88e7acb04b2aa093d4cb3bf6b1a80f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cdc303d1ed42f64558d78b5be93b0a4"><td class="memItemLeft" align="right" valign="top">LIB_API <a class="el" href="structs_graph.html">graph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a1cdc303d1ed42f64558d78b5be93b0a4">LoadGraphFromFile</a> (char *fichier)</td></tr>
+<tr class="memdesc:a1cdc303d1ed42f64558d78b5be93b0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge le graphe depuis un fichier donné  <a href="graph_8h.html#a1cdc303d1ed42f64558d78b5be93b0a4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1cdc303d1ed42f64558d78b5be93b0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee65c615ddaf01f0f3bac5796fd55e5"><td class="memItemLeft" align="right" valign="top">LIB_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a0ee65c615ddaf01f0f3bac5796fd55e5">freeGraph</a> (<a class="el" href="structs_graph.html">graph</a> *monGraph)</td></tr>
+<tr class="memdesc:a0ee65c615ddaf01f0f3bac5796fd55e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée pour le graph.  <a href="graph_8h.html#a0ee65c615ddaf01f0f3bac5796fd55e5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0ee65c615ddaf01f0f3bac5796fd55e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a764976f5875eaf6a51f7d834e8231"><td class="memItemLeft" align="right" valign="top"><a id="af4a764976f5875eaf6a51f7d834e8231"></a>
+LIB_API int&#160;</td><td class="memItemRight" valign="bottom"><b>GetLayerIDFromChar</b> (char c)</td></tr>
+<tr class="separator:af4a764976f5875eaf6a51f7d834e8231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8ace2034c7e9a470dd25b61dbdfd43"><td class="memItemLeft" align="right" valign="top">LIB_API <a class="el" href="structs_dijkstra_node.html">dijkstraNode</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a3e8ace2034c7e9a470dd25b61dbdfd43">Dijkstra</a> (<a class="el" href="structs_graph.html">graph</a> *G, <a class="el" href="structs_node.html">node</a> *init, unsigned char mask)</td></tr>
+<tr class="memdesc:a3e8ace2034c7e9a470dd25b61dbdfd43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique l'algorithme de Dijkstra à un graphe.  <a href="graph_8h.html#a3e8ace2034c7e9a470dd25b61dbdfd43">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3e8ace2034c7e9a470dd25b61dbdfd43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6599a18bb91d1285eee084b4f6afc424"><td class="memItemLeft" align="right" valign="top">LIB_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a6599a18bb91d1285eee084b4f6afc424">FreeDijkstra</a> (<a class="el" href="structs_dijkstra_node.html">dijkstraNode</a> **d, int size)</td></tr>
+<tr class="memdesc:a6599a18bb91d1285eee084b4f6afc424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée par Dijkstra.  <a href="graph_8h.html#a6599a18bb91d1285eee084b4f6afc424">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6599a18bb91d1285eee084b4f6afc424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f566c776834d79ccab10992470eb87"><td class="memItemLeft" align="right" valign="top">LIB_API <a class="el" href="structs_node.html">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a32f566c776834d79ccab10992470eb87">GetNodeFromPosition</a> (<a class="el" href="structs_graph.html">graph</a> *G, unsigned char X, unsigned char Y)</td></tr>
+<tr class="memdesc:a32f566c776834d79ccab10992470eb87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récuperer la position d'un noeud dans un graphe.  <a href="graph_8h.html#a32f566c776834d79ccab10992470eb87">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a32f566c776834d79ccab10992470eb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd11308d5ee207ba553f030e77acf0c"><td class="memItemLeft" align="right" valign="top">LIB_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#addd11308d5ee207ba553f030e77acf0c">GetManhattanDistance</a> (<a class="el" href="structs_node.html">node</a> *a, <a class="el" href="structs_node.html">node</a> *b)</td></tr>
+<tr class="memdesc:addd11308d5ee207ba553f030e77acf0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'obtenir la distance de Manhattan entre deux noeux.  <a href="graph_8h.html#addd11308d5ee207ba553f030e77acf0c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:addd11308d5ee207ba553f030e77acf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a299a9b982b74fd4e142dec41c1d9f26b"><td class="memItemLeft" align="right" valign="top">LIB_API char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a299a9b982b74fd4e142dec41c1d9f26b">IsNeighbour</a> (<a class="el" href="structs_node.html">node</a> *a, <a class="el" href="structs_node.html">node</a> *b)</td></tr>
+<tr class="memdesc:a299a9b982b74fd4e142dec41c1d9f26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si deux noeud sont voisins.  <a href="graph_8h.html#a299a9b982b74fd4e142dec41c1d9f26b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a299a9b982b74fd4e142dec41c1d9f26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b67b5d915dd12dfbf2b116bce3b49b"><td class="memItemLeft" align="right" valign="top"><a id="ac8b67b5d915dd12dfbf2b116bce3b49b"></a>
+LIB_API void&#160;</td><td class="memItemRight" valign="bottom"><b>SetNodeData</b> (<a class="el" href="structs_node.html">node</a> *noeud, void *data)</td></tr>
+<tr class="separator:ac8b67b5d915dd12dfbf2b116bce3b49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca9d333e713273749c140e99ab0a94d3"><td class="memItemLeft" align="right" valign="top"><a id="aca9d333e713273749c140e99ab0a94d3"></a>
+LIB_API void *&#160;</td><td class="memItemRight" valign="bottom"><b>GetNodeData</b> (<a class="el" href="structs_node.html">node</a> *noeud)</td></tr>
+<tr class="separator:aca9d333e713273749c140e99ab0a94d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Librairie comprenant la gestion de graph et le calcul du plus court chemin via Dijkstra. </p>
@@ -194,6 +211,38 @@ Fonctions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="ae59bc6bf3bace7f148316dcae3da3c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae59bc6bf3bace7f148316dcae3da3c42">&#9670;&nbsp;</a></span>eGroundID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="graph_8h.html#ae59bc6bf3bace7f148316dcae3da3c42">eGroundID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identifiants des types de terrains. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ae59bc6bf3bace7f148316dcae3da3c42a3a0aca18a26fe2bfce379e71883cf9d5"></a>GRASS_ID&#160;</td><td class="fielddoc"><p>0 = Herbe </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae59bc6bf3bace7f148316dcae3da3c42a11614c27ca20411a2f546ac533c67717"></a>FOREST_ID&#160;</td><td class="fielddoc"><p>1 = Foret </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae59bc6bf3bace7f148316dcae3da3c42a769b767c03a24d9834708055db520b97"></a>MOUNTAIN_ID&#160;</td><td class="fielddoc"><p>2 = Montagne </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae59bc6bf3bace7f148316dcae3da3c42a9da2b6d1d5e11a6f6a0243d1618e6551"></a>CITY_ID&#160;</td><td class="fielddoc"><p>3 = Ville </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae59bc6bf3bace7f148316dcae3da3c42ad94fb8f1123e67fba58f809790eb4ceb"></a>ROAD_ID&#160;</td><td class="fielddoc"><p>4 = Route </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae59bc6bf3bace7f148316dcae3da3c42a7f0fb6d7773182bda54427117b601286"></a>WATER_ID&#160;</td><td class="fielddoc"><p>5 = Eau </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae59bc6bf3bace7f148316dcae3da3c42afeb18035ccb1c517b63e9c5908cda21b"></a>NB_GROUND&#160;</td><td class="fielddoc"><p>6 = nombre de terrain possible </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="a6947a4328aa694f3e863737a888ef22c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6947a4328aa694f3e863737a888ef22c">&#9670;&nbsp;</a></span>eGroundMask</h2>
 
@@ -228,15 +277,43 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a28a43b1d0500890b3dc9c4f1f3f0d165"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28a43b1d0500890b3dc9c4f1f3f0d165">&#9670;&nbsp;</a></span>Dijkstra()</h2>
+<a id="ae5abcb5af5cd69929e84b67273fd7f8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5abcb5af5cd69929e84b67273fd7f8e">&#9670;&nbsp;</a></span>eNeighbourPosition</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structs_dijkstra_node.html">dijkstraNode</a>** Dijkstra </td>
+          <td class="memname">enum <a class="el" href="graph_8h.html#ae5abcb5af5cd69929e84b67273fd7f8e">eNeighbourPosition</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique l'emplacement du voisin par un nom plutot qu'une valeur. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ae5abcb5af5cd69929e84b67273fd7f8eaccde8d4587c5bf20424632c6fda76595"></a>NP_UP&#160;</td><td class="fielddoc"><p>0 = Voisin du dessus </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5abcb5af5cd69929e84b67273fd7f8eabe2138aa713d4db671949253acaefdca"></a>NP_LEFT&#160;</td><td class="fielddoc"><p>1 = Voisin de gauche </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5abcb5af5cd69929e84b67273fd7f8ea29ea5e3442afc7b3cbf2628db7dabaf5"></a>NP_RIGHT&#160;</td><td class="fielddoc"><p>2 = Voisin de droite </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5abcb5af5cd69929e84b67273fd7f8ea605b2ef4dd8c4c5fdf2d8356ef7e929f"></a>NP_DOWN&#160;</td><td class="fielddoc"><p>3 = Voisin du dessous </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5abcb5af5cd69929e84b67273fd7f8ea1ce81f86217194475601cbe44106dd24"></a>NB_NEIGHBORS&#160;</td><td class="fielddoc"><p>4 = Nombre de voisins </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a3e8ace2034c7e9a470dd25b61dbdfd43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8ace2034c7e9a470dd25b61dbdfd43">&#9670;&nbsp;</a></span>Dijkstra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LIB_API <a class="el" href="structs_dijkstra_node.html">dijkstraNode</a>** Dijkstra </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structs_graph.html">graph</a> *&#160;</td>
           <td class="paramname"><em>G</em>, </td>
@@ -274,14 +351,14 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4e17c485ee2be730b2327b7f69e7e679"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e17c485ee2be730b2327b7f69e7e679">&#9670;&nbsp;</a></span>FreeDijkstra()</h2>
+<a id="a6599a18bb91d1285eee084b4f6afc424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6599a18bb91d1285eee084b4f6afc424">&#9670;&nbsp;</a></span>FreeDijkstra()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void FreeDijkstra </td>
+          <td class="memname">LIB_API void FreeDijkstra </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structs_dijkstra_node.html">dijkstraNode</a> **&#160;</td>
           <td class="paramname"><em>d</em>, </td>
@@ -311,14 +388,14 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8557f0a0b7d7fab7d03d0ca45f5967a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8557f0a0b7d7fab7d03d0ca45f5967a7">&#9670;&nbsp;</a></span>freeGraph()</h2>
+<a id="a0ee65c615ddaf01f0f3bac5796fd55e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee65c615ddaf01f0f3bac5796fd55e5">&#9670;&nbsp;</a></span>freeGraph()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void freeGraph </td>
+          <td class="memname">LIB_API void freeGraph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structs_graph.html">graph</a> *&#160;</td>
           <td class="paramname"><em>monGraph</em></td><td>)</td>
@@ -337,41 +414,14 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e62240b8e22133f69f952fc28efefc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e62240b8e22133f69f952fc28efefc8">&#9670;&nbsp;</a></span>GetLayerIDFromChar()</h2>
+<a id="addd11308d5ee207ba553f030e77acf0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd11308d5ee207ba553f030e77acf0c">&#9670;&nbsp;</a></span>GetManhattanDistance()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int GetLayerIDFromChar </td>
-          <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Permet de récupérer l'identifiant d'un terrain à partir de sa lettre. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Charactère correspondant au terrain (voir s_groundChar)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Identifiant du type du terrain </dd></dl>
-
-</div>
-</div>
-<a id="a50c57d37730aa46f2c13dca1ad25ff8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50c57d37730aa46f2c13dca1ad25ff8b">&#9670;&nbsp;</a></span>GetManhattanDistance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GetManhattanDistance </td>
+          <td class="memname">LIB_API int GetManhattanDistance </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structs_node.html">node</a> *&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -402,41 +452,14 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a88e7acb04b2aa093d4cb3bf6b1a80f43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88e7acb04b2aa093d4cb3bf6b1a80f43">&#9670;&nbsp;</a></span>GetNodeData()</h2>
+<a id="a32f566c776834d79ccab10992470eb87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f566c776834d79ccab10992470eb87">&#9670;&nbsp;</a></span>GetNodeFromPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* GetNodeData </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structs_node.html">node</a> *&#160;</td>
-          <td class="paramname"><em>node</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Permet de récupérer les données génériques incrites dans un noeud. Note: ne retire pas les données du noeud. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">node</td><td>Noeud dont il faut récupérer les données</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers les données </dd></dl>
-
-</div>
-</div>
-<a id="aa30365622ef96a1916abc8cea3f373f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa30365622ef96a1916abc8cea3f373f9">&#9670;&nbsp;</a></span>GetNodeFromPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structs_node.html">node</a>* GetNodeFromPosition </td>
+          <td class="memname">LIB_API <a class="el" href="structs_node.html">node</a>* GetNodeFromPosition </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structs_graph.html">graph</a> *&#160;</td>
           <td class="paramname"><em>G</em>, </td>
@@ -474,14 +497,14 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad9411f4072f830baa6e532aa13c4f41a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9411f4072f830baa6e532aa13c4f41a">&#9670;&nbsp;</a></span>IsNeighbour()</h2>
+<a id="a299a9b982b74fd4e142dec41c1d9f26b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a299a9b982b74fd4e142dec41c1d9f26b">&#9670;&nbsp;</a></span>IsNeighbour()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char IsNeighbour </td>
+          <td class="memname">LIB_API char IsNeighbour </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structs_node.html">node</a> *&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -512,14 +535,14 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a693b5b93e5d105458a65ca7421ea7f2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a693b5b93e5d105458a65ca7421ea7f2b">&#9670;&nbsp;</a></span>LoadGraphFromFile()</h2>
+<a id="a1cdc303d1ed42f64558d78b5be93b0a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cdc303d1ed42f64558d78b5be93b0a4">&#9670;&nbsp;</a></span>LoadGraphFromFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structs_graph.html">graph</a>* LoadGraphFromFile </td>
+          <td class="memname">LIB_API <a class="el" href="structs_graph.html">graph</a>* LoadGraphFromFile </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>fichier</em></td><td>)</td>
@@ -536,43 +559,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Pointeur sur un graphe </dd></dl>
-
-</div>
-</div>
-<a id="a1d7d61588cb2d028217d4831472d2b5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d7d61588cb2d028217d4831472d2b5e">&#9670;&nbsp;</a></span>SetNodeData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SetNodeData </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structs_node.html">node</a> *&#160;</td>
-          <td class="paramname"><em>node</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>valeur</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Remplie le champ de données génériques d'un noeud. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">node</td><td>Noeud à modifier </td></tr>
-    <tr><td class="paramname">valeur</td><td>Pointeur vers les données à ajouter </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

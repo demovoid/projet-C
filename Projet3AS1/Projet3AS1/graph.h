@@ -67,13 +67,17 @@ static const char s_groundChar[NB_GROUND] = {
 	'W'
 }; /**< Caractère pour identifier un terrain */
 
+/**
+ * \enum eNeighbourPosition
+ * \brief Indique l'emplacement du voisin par un nom plutot qu'une valeur
+*/
 enum eNeighbourPosition
 {
-	NP_UP,
-	NP_LEFT,
-	NP_RIGHT,
-	NP_DOWN,
-	NB_NEIGHBORS
+	NP_UP, /**< 0 = Voisin du dessus */
+	NP_LEFT, /**< 1 = Voisin de gauche */
+	NP_RIGHT, /**< 2 = Voisin de droite */
+	NP_DOWN, /**< 3 = Voisin du dessous */
+	NB_NEIGHBORS /**< 4 = Nombre de voisins */
 };
 
 /**

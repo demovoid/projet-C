@@ -12,7 +12,7 @@ Un noeud de graphe.
 \doxysubsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{structs_node_aa9b25a3c277180de5aa38227d6d06427}{m\+\_\+id}}
+unsigned int \mbox{\hyperlink{structs_node_a8557296c70fc50aae858edd02710e1da}{m\+\_\+id}}
 \item 
 unsigned char \mbox{\hyperlink{structs_node_a0e10401b1e54962de36a153b7d6a5baf}{m\+\_\+posX}}
 \item 
@@ -20,9 +20,9 @@ unsigned char \mbox{\hyperlink{structs_node_a6ffc5d4def238265695b25bfe2aca3f2}{m
 \item 
 unsigned char \mbox{\hyperlink{structs_node_a51adf373874a868b72911db82b8cf428}{m\+\_\+layer}}
 \item 
-unsigned char \mbox{\hyperlink{structs_node_a1f73272663dcebeea9bca8bafe6eaa8b}{m\+\_\+layer\+ID}}
+unsigned int \mbox{\hyperlink{structs_node_a7dc77e4b19a20377b6bd934c6aa6d85e}{m\+\_\+layer\+ID}}
 \item 
-\mbox{\hyperlink{structs_node}{node}} $\ast$ \mbox{\hyperlink{structs_node_a70ef419d65bf67c81c044b8e8b46f5d8}{m\+\_\+neighbors}} \mbox{[}4\mbox{]}
+\mbox{\hyperlink{structs_node}{node}} $\ast$ \mbox{\hyperlink{structs_node_a5a685f4bc6e8dbf3e8b0ab42e8be77c0}{m\+\_\+neighbors}} \mbox{[}\mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea1ce81f86217194475601cbe44106dd24}{N\+B\+\_\+\+N\+E\+I\+G\+H\+B\+O\+RS}}\mbox{]}
 \item 
 void $\ast$ \mbox{\hyperlink{structs_node_af1e633f23d444e21ce96edbb1f208c6d}{m\+\_\+data}}
 \end{DoxyCompactItemize}
@@ -38,11 +38,11 @@ Un noeud de graphe.
 \doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
 {\footnotesize\ttfamily void$\ast$ s\+Node\+::m\+\_\+data}
 
-Pointeur générique de données. Permet de stocker n\textquotesingle{}importe quoi \mbox{\Hypertarget{structs_node_aa9b25a3c277180de5aa38227d6d06427}\label{structs_node_aa9b25a3c277180de5aa38227d6d06427}} 
+Pointeur générique de données. Permet de stocker n\textquotesingle{}importe quoi \mbox{\Hypertarget{structs_node_a8557296c70fc50aae858edd02710e1da}\label{structs_node_a8557296c70fc50aae858edd02710e1da}} 
 \index{sNode@{sNode}!m\_id@{m\_id}}
 \index{m\_id@{m\_id}!sNode@{sNode}}
 \doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
-{\footnotesize\ttfamily int s\+Node\+::m\+\_\+id}
+{\footnotesize\ttfamily unsigned int s\+Node\+::m\+\_\+id}
 
 Identifiant du noeud \mbox{\Hypertarget{structs_node_a51adf373874a868b72911db82b8cf428}\label{structs_node_a51adf373874a868b72911db82b8cf428}} 
 \index{sNode@{sNode}!m\_layer@{m\_layer}}
@@ -50,17 +50,17 @@ Identifiant du noeud \mbox{\Hypertarget{structs_node_a51adf373874a868b72911db82b
 \doxysubsubsection{\texorpdfstring{m\_layer}{m\_layer}}
 {\footnotesize\ttfamily unsigned char s\+Node\+::m\+\_\+layer}
 
-Masque du noeud (type de terrain) \mbox{\Hypertarget{structs_node_a1f73272663dcebeea9bca8bafe6eaa8b}\label{structs_node_a1f73272663dcebeea9bca8bafe6eaa8b}} 
+Masque du noeud (type de terrain) \mbox{\Hypertarget{structs_node_a7dc77e4b19a20377b6bd934c6aa6d85e}\label{structs_node_a7dc77e4b19a20377b6bd934c6aa6d85e}} 
 \index{sNode@{sNode}!m\_layerID@{m\_layerID}}
 \index{m\_layerID@{m\_layerID}!sNode@{sNode}}
 \doxysubsubsection{\texorpdfstring{m\_layerID}{m\_layerID}}
-{\footnotesize\ttfamily unsigned char s\+Node\+::m\+\_\+layer\+ID}
+{\footnotesize\ttfamily unsigned int s\+Node\+::m\+\_\+layer\+ID}
 
-Identifiant du masque (id du terrain) \mbox{\Hypertarget{structs_node_a70ef419d65bf67c81c044b8e8b46f5d8}\label{structs_node_a70ef419d65bf67c81c044b8e8b46f5d8}} 
+Identifiant du masque (id du terrain) \mbox{\Hypertarget{structs_node_a5a685f4bc6e8dbf3e8b0ab42e8be77c0}\label{structs_node_a5a685f4bc6e8dbf3e8b0ab42e8be77c0}} 
 \index{sNode@{sNode}!m\_neighbors@{m\_neighbors}}
 \index{m\_neighbors@{m\_neighbors}!sNode@{sNode}}
 \doxysubsubsection{\texorpdfstring{m\_neighbors}{m\_neighbors}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structs_node}{node}}$\ast$ s\+Node\+::m\+\_\+neighbors\mbox{[}4\mbox{]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs_node}{node}}$\ast$ s\+Node\+::m\+\_\+neighbors\mbox{[}\mbox{\hyperlink{graph_8h_ae5abcb5af5cd69929e84b67273fd7f8ea1ce81f86217194475601cbe44106dd24}{N\+B\+\_\+\+N\+E\+I\+G\+H\+B\+O\+RS}}\mbox{]}}
 
 Les voisins du noeud (N\+U\+LL = pas de voisin). 0\+: Voisin nord, 1\+: voisin ouest, 2\+: voisin est, 3\+: voisin sud \mbox{\Hypertarget{structs_node_a0e10401b1e54962de36a153b7d6a5baf}\label{structs_node_a0e10401b1e54962de36a153b7d6a5baf}} 
 \index{sNode@{sNode}!m\_posX@{m\_posX}}
