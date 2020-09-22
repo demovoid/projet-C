@@ -82,11 +82,8 @@ void freeGraph(graph* monGraph){
 	if(!monGraph || !monGraph->m_data)
 		return;
 	
-	for(int i = 0; i < monGraph->m_sizeY*monGraph->m_sizeX; i++){
-		if(monGraph->m_data[i]->m_data)
-			free(monGraph->m_data[i]->m_data); //peut causer des problèmes si m_data est d'un type défini par l'utilisateur
+	for(int i = 0; i < monGraph->m_sizeY*monGraph->m_sizeX; i++)
 		free(monGraph->m_data[i]);
-	}
 
 	free(monGraph->m_data);
 	free(monGraph);
@@ -107,7 +104,7 @@ int GetLayerIDFromChar(char c){
 		case 'W':
 			return WATER_ID;
 		default:
-			return NOTHING;
+			return -1;
 
 	}
 }

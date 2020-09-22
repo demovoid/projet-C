@@ -33,13 +33,11 @@ int main(){
 	printf("\n\n",monGraph);
 	afficherGraphByTID(monGraph);
 	
-	
-	/*
+	printf("\n");	
 	for(int i = 0; i < NB_GROUND; i++){
 		val = GetLayerIDFromChar(s_groundChar[i]);
 		printf("Pour %c: %d\n", s_groundChar[i], val);
 	}
-	*/
 	
 	/*
 		
