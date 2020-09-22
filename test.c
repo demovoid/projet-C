@@ -9,7 +9,7 @@ void afficherGraphByTID(graph* g){
 	
 	for(int i = 0; i < g->m_sizeY; i++){
 		for(int j = 0; j < g->m_sizeX; j++){
-			switch(g->m_data[i*g->m_sizeX + j]->m_id){
+			switch(g->m_data[i*g->m_sizeX + j]->m_layerID){
 				case GRASS_ID:
 					strcpy(couleur,"\x1b[38;2;0;255;127m");
 					break;
@@ -55,7 +55,7 @@ void afficherDijkstra(dijkstraNode** d, graph* g){
 
 	for(int i = 0; i < g->m_sizeY; i++){
 		for(int j = 0; j < g->m_sizeX; j++)
-			printf("%s%05d\x1b[0m ", d[i*g->m_sizeX + j]->m_distance == INFINITY_DIST ? "\033[0;31;40m" : "", d[i*g->m_sizeX + j]->m_distance);
+			printf("%s%05d\x1b[0m ", d[i*g->m_sizeX + j]->m_distance == INFINITY_DIST ? "\033[0;31;40m" : (d[i*g->m_sizeX + j]->m_distance ? "" : "\033[0;32;40m"), d[i*g->m_sizeX + j]->m_distance);
 		printf("\n");
 	}
 }
