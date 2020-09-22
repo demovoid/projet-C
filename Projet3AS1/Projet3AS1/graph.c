@@ -92,8 +92,60 @@ void freeGraph(graph* monGraph){
 dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 {
 	int nbCells = G->m_sizeX * G->m_sizeY;
-	dijkstraNode* nd = (dijkstraNode*)calloc(1, sizeof(dijkstraNode));
+	dijkstraNode** nd = malloc(sizeof(dijkstraNode*) * nbCells);
+	for(int i = 0; i < nbCells; i++){
+		nd[i] = malloc(sizeof(dijkstraNode));
+		nd[i]->m_node = G->m_data[i]; 
+		nd[i]->m_distance = INFINITY_DIST;
+		nd[i]->m_flag = 0; 
+		nd[i]->m_prev = NULL;
+	}
+
+	int indice = init->m_posY*G->m_sizeX + init->m_posX;
+
+	nd[indice]->m_distance = 0;
+	nd[indice]->m_flag = 1;
+
+	dijkstraNode* target = NULL;
+	dijkstraNode* next = NULL;
+
+	do{
+		for(int i = 0; i < 4; i++){
+			if(G->m_data[indice]->m_neighbors[i]->m_layer & mask){
+				target = nd[G->m_data[indice]->m_neighbors[i]->m_posY*G->m_sizeX + G->m_data[indice]->m_neighbors[i]->m_posX];
+				if(!target->m_flag){
+					int dist = GetManhattanDistance(nd[indice]->m_node, target->m_node);
+					if(dist > nd[indice]->m_distance)
+						target->m_distance = nd[indice]->m_distance;
+					if(!next || next->m_distance > target->m_distance)
+						next = target;
+				}
+			}
+		}
+
+		if(!next)
+			next = nd[indice]->m_prev;
+		else{
+			next->m_flag = 1;
+			next->m_prev = nd[indice];
+		}
+
+		indice = next ? next->m_node->m_posY*G->m_sizeX + next->m_node->m_posX : -1;
+
+	}while(next);
 	
+	return nd;
+
+}
+
+void FreeDijkstra(dijkstraNode** d, graph* g){
+	if(!d)
+		return;
+	
+	for(int i = 0; i < g->m_sizeY*g->m_sizeX; i++)
+		free(d[i]);
+		
+	free(d);
 }
 
 node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y)
