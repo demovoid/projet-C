@@ -28,10 +28,10 @@ graph* LoadGraphFromFile(char* fichier){
 	
 	char c;
 	
-	for(int i = 0; i < sizeY*sizeX; i++){
+	for(int i = 0; i < sizeY*sizeX && !feof(monFichier); i++){
 		do{
 			fscanf(monFichier,"%c",&c); //erreur si fichier non complet !!!
-		}while(c < 'A' || c > 'Z');
+		}while((c < 'A' || c > 'Z') && !feof(monFichier));
 		monGraph->m_data[i]->m_id = i;
 		monGraph->m_data[i]->m_posX = i%sizeX;
 		monGraph->m_data[i]->m_posY = i/sizeX;
@@ -72,6 +72,8 @@ graph* LoadGraphFromFile(char* fichier){
 		monGraph->m_data[i]->m_neighbors[3] = (monGraph->m_data[i]->m_posY+1) < sizeY ? monGraph->m_data[i+sizeX] : NULL;
 		monGraph->m_data[i]->m_data = NULL;
 	}
+
+	fclose(monFichier);
 	
 	return monGraph;
 }
@@ -85,6 +87,7 @@ void freeGraph(graph* monGraph){
 			free(monGraph->m_data[i]->m_data); //peut causer des problèmes si m_data est d'un type défini par l'utilisateur
 		free(monGraph->m_data[i]);
 	}
+
 	free(monGraph->m_data);
 	free(monGraph);
 }
