@@ -1,5 +1,20 @@
 #include "./graph.h"
 
+/**
+ * \file graph.c
+ * \brief Fonctions de la librairie comprenant la gestion de graph et le calcul du plus court chemin via Dijkstra
+ * \author DIDIER Thomas et ROUSSEAU Martin
+ * \version 1.0
+ * \date 22/09/2020
+*/
+
+/**
+ * \brief Charge le graphe depuis un fichier donné
+ *
+ * @param fichier Chemin vers le fichier à lire
+ *
+ * @return Pointeur sur un graphe
+*/
 graph* LoadGraphFromFile(char* fichier){
 	
 	graph* monGraph = NULL;
@@ -78,6 +93,11 @@ graph* LoadGraphFromFile(char* fichier){
 	return monGraph;
 }
 
+/**
+ * \brief Libère la mémoire allouée pour le graph
+ *
+ * @param monGraph Graphe à libérer
+*/
 void freeGraph(graph* monGraph){
 	if(!monGraph || !monGraph->m_data)
 		return;
@@ -89,6 +109,15 @@ void freeGraph(graph* monGraph){
 	free(monGraph);
 }
 
+/**
+ * \brief Applique l'algorithme de Dijkstra à un graphe
+ *
+ * @param G Pointeur sur le graphe sur lequel appliquer l'algo
+ * @param init Point de départ (noeud par lequel le chemin commence)
+ * @param mask Masque indiquant les types de terrain qui sont traversables
+ *
+ * @return Tableau de noeud avec les caractisques calculées par l'algo de Dijkstra
+*/
 dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 {
 	int nbCells = G->m_sizeX * G->m_sizeY;
@@ -138,16 +167,31 @@ dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 
 }
 
-void FreeDijkstra(dijkstraNode** d, graph* g){
+/**
+ * \brief Libère la mémoire allouée par Dijkstra
+ *
+ * @param d Tableau de noeux issu de l'algo de Dijkstra
+ * @param size Nombre de cases allouées dans le tableau
+*/
+void FreeDijkstra(dijkstraNode** d, int size){
 	if(!d)
 		return;
 	
-	for(int i = 0; i < g->m_sizeY*g->m_sizeX; i++)
+	for(int i = 0; i < size; i++)
 		free(d[i]);
 		
 	free(d);
 }
 
+/**
+ * \brief Permet de récuperer la position d'un noeud dans un graphe
+ *
+ * @param G Pointeur sur le graphe dans lequel chercher
+ * @param X Valeur en abscisse (longueur) du noeud cherché
+ * @param Y Valeur en ordonnée (hauteur) du noeud cherché
+ *
+ * @return Pointeur sur le noeud recherché (s'il existe, NULL sinon)
+*/
 node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y)
 {
 	if(X < (unsigned int)G->m_sizeX && Y < (unsigned int)G->m_sizeY)
@@ -155,6 +199,14 @@ node* GetNodeFromPosition(graph* G, unsigned char X, unsigned char Y)
 	return NULL;
 }
 
+/**
+ * \brief Permet d'obtenir la distance de Manhattan entre deux noeux
+ *
+ * @param a Premier noeud
+ * @param b Second noeud
+ *
+ * @return La distance de Manhattan entre les deux noeud
+*/
 int GetManhattanDistance(node* a, node* b)
 {
 	int dx = b->m_posX - a->m_posX;
@@ -166,6 +218,14 @@ int GetManhattanDistance(node* a, node* b)
 	return dx + dy;
 }
 
+/**
+ * \brief Verifie si deux noeud sont voisins
+ *
+ * @param a Premier noeud
+ * @param b Second noeud
+ *
+ * @return 1 si les noeud sont voisins, 0 sinon
+*/
 char IsNeighbour(node* a, node* b)
 {
 	for (int i = 0; i < 4; i++)
@@ -179,6 +239,13 @@ char IsNeighbour(node* a, node* b)
 	return 0;
 }
 
+/**
+ * \brief Permet de récupérer l'identifiant d'un terrain à partir de sa lettre
+ *
+ * @param c Charactère correspondant au terrain (voir s_groundChar)
+ *
+ * @return Identifiant du type du terrain
+*/
 int GetLayerIDFromChar(char c){
 	switch(c){
 		case 'G':
@@ -199,10 +266,23 @@ int GetLayerIDFromChar(char c){
 	}
 }
 
+/**
+ * \brief Remplie le champ de données génériques d'un noeud
+ *
+ * @param node Noeud à modifier
+ * @param valeur Pointeur vers les données à ajouter
+*/
 void SetNodeData(node* node, void* valeur){
 	node->m_data = valeur;
 }
 
+/**
+ * \brief Permet de récupérer les données génériques incrites dans un noeud. Note: ne retire pas les données du noeud
+ *
+ * @param node Noeud dont il faut récupérer les données
+ *
+ * @return Pointeur vers les données
+*/
 void* GetNodeData(node* node){
 	return node->m_data;
 }

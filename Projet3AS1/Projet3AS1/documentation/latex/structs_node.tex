@@ -1,0 +1,81 @@
+\hypertarget{structs_node}{}\doxysection{Référence de la structure s\+Node}
+\label{structs_node}\index{sNode@{sNode}}
+
+
+Un noeud de graphe.  
+
+
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structs_node_aa9b25a3c277180de5aa38227d6d06427}{m\+\_\+id}}
+\item 
+unsigned char \mbox{\hyperlink{structs_node_a0e10401b1e54962de36a153b7d6a5baf}{m\+\_\+posX}}
+\item 
+unsigned char \mbox{\hyperlink{structs_node_a6ffc5d4def238265695b25bfe2aca3f2}{m\+\_\+posY}}
+\item 
+unsigned char \mbox{\hyperlink{structs_node_a51adf373874a868b72911db82b8cf428}{m\+\_\+layer}}
+\item 
+unsigned char \mbox{\hyperlink{structs_node_a1f73272663dcebeea9bca8bafe6eaa8b}{m\+\_\+layer\+ID}}
+\item 
+\mbox{\hyperlink{structs_node}{node}} $\ast$ \mbox{\hyperlink{structs_node_a70ef419d65bf67c81c044b8e8b46f5d8}{m\+\_\+neighbors}} \mbox{[}4\mbox{]}
+\item 
+void $\ast$ \mbox{\hyperlink{structs_node_af1e633f23d444e21ce96edbb1f208c6d}{m\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Un noeud de graphe. 
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{structs_node_af1e633f23d444e21ce96edbb1f208c6d}\label{structs_node_af1e633f23d444e21ce96edbb1f208c6d}} 
+\index{sNode@{sNode}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!sNode@{sNode}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily void$\ast$ s\+Node\+::m\+\_\+data}
+
+Pointeur générique de données. Permet de stocker n\textquotesingle{}importe quoi \mbox{\Hypertarget{structs_node_aa9b25a3c277180de5aa38227d6d06427}\label{structs_node_aa9b25a3c277180de5aa38227d6d06427}} 
+\index{sNode@{sNode}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!sNode@{sNode}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily int s\+Node\+::m\+\_\+id}
+
+Identifiant du noeud \mbox{\Hypertarget{structs_node_a51adf373874a868b72911db82b8cf428}\label{structs_node_a51adf373874a868b72911db82b8cf428}} 
+\index{sNode@{sNode}!m\_layer@{m\_layer}}
+\index{m\_layer@{m\_layer}!sNode@{sNode}}
+\doxysubsubsection{\texorpdfstring{m\_layer}{m\_layer}}
+{\footnotesize\ttfamily unsigned char s\+Node\+::m\+\_\+layer}
+
+Masque du noeud (type de terrain) \mbox{\Hypertarget{structs_node_a1f73272663dcebeea9bca8bafe6eaa8b}\label{structs_node_a1f73272663dcebeea9bca8bafe6eaa8b}} 
+\index{sNode@{sNode}!m\_layerID@{m\_layerID}}
+\index{m\_layerID@{m\_layerID}!sNode@{sNode}}
+\doxysubsubsection{\texorpdfstring{m\_layerID}{m\_layerID}}
+{\footnotesize\ttfamily unsigned char s\+Node\+::m\+\_\+layer\+ID}
+
+Identifiant du masque (id du terrain) \mbox{\Hypertarget{structs_node_a70ef419d65bf67c81c044b8e8b46f5d8}\label{structs_node_a70ef419d65bf67c81c044b8e8b46f5d8}} 
+\index{sNode@{sNode}!m\_neighbors@{m\_neighbors}}
+\index{m\_neighbors@{m\_neighbors}!sNode@{sNode}}
+\doxysubsubsection{\texorpdfstring{m\_neighbors}{m\_neighbors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs_node}{node}}$\ast$ s\+Node\+::m\+\_\+neighbors\mbox{[}4\mbox{]}}
+
+Les voisins du noeud (N\+U\+LL = pas de voisin). 0\+: Voisin nord, 1\+: voisin ouest, 2\+: voisin est, 3\+: voisin sud \mbox{\Hypertarget{structs_node_a0e10401b1e54962de36a153b7d6a5baf}\label{structs_node_a0e10401b1e54962de36a153b7d6a5baf}} 
+\index{sNode@{sNode}!m\_posX@{m\_posX}}
+\index{m\_posX@{m\_posX}!sNode@{sNode}}
+\doxysubsubsection{\texorpdfstring{m\_posX}{m\_posX}}
+{\footnotesize\ttfamily unsigned char s\+Node\+::m\+\_\+posX}
+
+Position du noeud abscisses(longueur) \mbox{\Hypertarget{structs_node_a6ffc5d4def238265695b25bfe2aca3f2}\label{structs_node_a6ffc5d4def238265695b25bfe2aca3f2}} 
+\index{sNode@{sNode}!m\_posY@{m\_posY}}
+\index{m\_posY@{m\_posY}!sNode@{sNode}}
+\doxysubsubsection{\texorpdfstring{m\_posY}{m\_posY}}
+{\footnotesize\ttfamily unsigned char s\+Node\+::m\+\_\+posY}
+
+Position du noeud ordonnées(hauteur) 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{graph_8h}{graph.\+h}}\end{DoxyCompactItemize}

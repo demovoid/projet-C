@@ -1,0 +1,57 @@
+\hypertarget{structs_dijkstra_node}{}\doxysection{Référence de la structure s\+Dijkstra\+Node}
+\label{structs_dijkstra_node}\index{sDijkstraNode@{sDijkstraNode}}
+
+
+Un noeud de graphe avec les informations de l\textquotesingle{}algo de Dijkstra.  
+
+
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structs_node}{node}} $\ast$ \mbox{\hyperlink{structs_dijkstra_node_acd37e21b707e65046f59b7fe4aa512d4}{m\+\_\+node}}
+\item 
+int \mbox{\hyperlink{structs_dijkstra_node_af6e5d8b46187d2f5cee932e5c23a0110}{m\+\_\+distance}}
+\item 
+char \mbox{\hyperlink{structs_dijkstra_node_a72a2998424eebacb6dbf066017c3e781}{m\+\_\+flag}}
+\item 
+\mbox{\hyperlink{structs_node}{node}} $\ast$ \mbox{\hyperlink{structs_dijkstra_node_a4a9e3913ed62b84c3c6c66e47c03cd2c}{m\+\_\+prev}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Un noeud de graphe avec les informations de l\textquotesingle{}algo de Dijkstra. 
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{structs_dijkstra_node_af6e5d8b46187d2f5cee932e5c23a0110}\label{structs_dijkstra_node_af6e5d8b46187d2f5cee932e5c23a0110}} 
+\index{sDijkstraNode@{sDijkstraNode}!m\_distance@{m\_distance}}
+\index{m\_distance@{m\_distance}!sDijkstraNode@{sDijkstraNode}}
+\doxysubsubsection{\texorpdfstring{m\_distance}{m\_distance}}
+{\footnotesize\ttfamily int s\+Dijkstra\+Node\+::m\+\_\+distance}
+
+Distance parcourue entre le point de départ et ce noeud \mbox{\Hypertarget{structs_dijkstra_node_a72a2998424eebacb6dbf066017c3e781}\label{structs_dijkstra_node_a72a2998424eebacb6dbf066017c3e781}} 
+\index{sDijkstraNode@{sDijkstraNode}!m\_flag@{m\_flag}}
+\index{m\_flag@{m\_flag}!sDijkstraNode@{sDijkstraNode}}
+\doxysubsubsection{\texorpdfstring{m\_flag}{m\_flag}}
+{\footnotesize\ttfamily char s\+Dijkstra\+Node\+::m\+\_\+flag}
+
+Indique si le noeud a déjà été parcouru \mbox{\Hypertarget{structs_dijkstra_node_acd37e21b707e65046f59b7fe4aa512d4}\label{structs_dijkstra_node_acd37e21b707e65046f59b7fe4aa512d4}} 
+\index{sDijkstraNode@{sDijkstraNode}!m\_node@{m\_node}}
+\index{m\_node@{m\_node}!sDijkstraNode@{sDijkstraNode}}
+\doxysubsubsection{\texorpdfstring{m\_node}{m\_node}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs_node}{node}}$\ast$ s\+Dijkstra\+Node\+::m\+\_\+node}
+
+Le noeud correspondant aux données de la structure \mbox{\Hypertarget{structs_dijkstra_node_a4a9e3913ed62b84c3c6c66e47c03cd2c}\label{structs_dijkstra_node_a4a9e3913ed62b84c3c6c66e47c03cd2c}} 
+\index{sDijkstraNode@{sDijkstraNode}!m\_prev@{m\_prev}}
+\index{m\_prev@{m\_prev}!sDijkstraNode@{sDijkstraNode}}
+\doxysubsubsection{\texorpdfstring{m\_prev}{m\_prev}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs_node}{node}}$\ast$ s\+Dijkstra\+Node\+::m\+\_\+prev}
+
+Noeud précédent (chemin) 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{graph_8h}{graph.\+h}}\end{DoxyCompactItemize}

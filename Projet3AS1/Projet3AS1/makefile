@@ -8,13 +8,10 @@ else
 	propre = find . -type f -executable -delete
 endif
 
-test: test.o graph.o
+main: main.o graph.o
 	${CC} $^ -o $@
 
-graph.o: data/graph.c
-	${CC} $< -c -o $@
-
-test.o: test.c
+%.o: %.c
 	${CC} $< -c -o $@
 
 clean:

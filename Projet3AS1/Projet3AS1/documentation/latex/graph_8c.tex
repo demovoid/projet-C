@@ -1,0 +1,235 @@
+\hypertarget{graph_8c}{}\doxysection{Référence du fichier graph.\+c}
+\label{graph_8c}\index{graph.c@{graph.c}}
+
+
+Fonctions de la librairie comprenant la gestion de graph et le calcul du plus court chemin via Dijkstra.  
+
+
+{\ttfamily \#include \char`\"{}./graph.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structs_graph}{graph}} $\ast$ \mbox{\hyperlink{graph_8c_a693b5b93e5d105458a65ca7421ea7f2b}{Load\+Graph\+From\+File}} (char $\ast$fichier)
+\begin{DoxyCompactList}\small\item\em Charge le graphe depuis un fichier donné \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a8557f0a0b7d7fab7d03d0ca45f5967a7}{free\+Graph}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$mon\+Graph)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée pour le graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$ \mbox{\hyperlink{graph_8c_a28a43b1d0500890b3dc9c4f1f3f0d165}{Dijkstra}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$G, \mbox{\hyperlink{structs_node}{node}} $\ast$init, unsigned char mask)
+\begin{DoxyCompactList}\small\item\em Applique l\textquotesingle{}algorithme de Dijkstra à un graphe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a4e17c485ee2be730b2327b7f69e7e679}{Free\+Dijkstra}} (\mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$d, int size)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée par Dijkstra. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structs_node}{node}} $\ast$ \mbox{\hyperlink{graph_8c_aa30365622ef96a1916abc8cea3f373f9}{Get\+Node\+From\+Position}} (\mbox{\hyperlink{structs_graph}{graph}} $\ast$G, unsigned char X, unsigned char Y)
+\begin{DoxyCompactList}\small\item\em Permet de récuperer la position d\textquotesingle{}un noeud dans un graphe. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graph_8c_a50c57d37730aa46f2c13dca1ad25ff8b}{Get\+Manhattan\+Distance}} (\mbox{\hyperlink{structs_node}{node}} $\ast$a, \mbox{\hyperlink{structs_node}{node}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la distance de Manhattan entre deux noeux. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{graph_8c_ad9411f4072f830baa6e532aa13c4f41a}{Is\+Neighbour}} (\mbox{\hyperlink{structs_node}{node}} $\ast$a, \mbox{\hyperlink{structs_node}{node}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Verifie si deux noeud sont voisins. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graph_8c_a6e62240b8e22133f69f952fc28efefc8}{Get\+Layer\+I\+D\+From\+Char}} (char c)
+\begin{DoxyCompactList}\small\item\em Permet de récupérer l\textquotesingle{}identifiant d\textquotesingle{}un terrain à partir de sa lettre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_ab8aa38a25d26fa203c5bf3b74ba14b4f}{Set\+Node\+Data}} (\mbox{\hyperlink{structs_node}{node}} $\ast$\mbox{\hyperlink{structs_node}{node}}, void $\ast$valeur)
+\begin{DoxyCompactList}\small\item\em Remplie le champ de données génériques d\textquotesingle{}un noeud. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{graph_8c_aba9632809da39c74c48b81522c31e471}{Get\+Node\+Data}} (\mbox{\hyperlink{structs_node}{node}} $\ast$\mbox{\hyperlink{structs_node}{node}})
+\begin{DoxyCompactList}\small\item\em Permet de récupérer les données génériques incrites dans un noeud. Note\+: ne retire pas les données du noeud. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fonctions de la librairie comprenant la gestion de graph et le calcul du plus court chemin via Dijkstra. 
+
+\begin{DoxyAuthor}{Auteur}
+D\+I\+D\+I\+ER Thomas et R\+O\+U\+S\+S\+E\+AU Martin 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+22/09/2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{graph_8c_a28a43b1d0500890b3dc9c4f1f3f0d165}\label{graph_8c_a28a43b1d0500890b3dc9c4f1f3f0d165}} 
+\index{graph.c@{graph.c}!Dijkstra@{Dijkstra}}
+\index{Dijkstra@{Dijkstra}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{Dijkstra()}{Dijkstra()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}}$\ast$$\ast$ Dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{G,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{init,  }\item[{unsigned char}]{mask }\end{DoxyParamCaption})}
+
+
+
+Applique l\textquotesingle{}algorithme de Dijkstra à un graphe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em G} & Pointeur sur le graphe sur lequel appliquer l\textquotesingle{}algo \\
+\hline
+{\em init} & Point de départ (noeud par lequel le chemin commence) \\
+\hline
+{\em mask} & Masque indiquant les types de terrain qui sont traversables\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Tableau de noeud avec les caractisques calculées par l\textquotesingle{}algo de Dijkstra 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graph_8c_a4e17c485ee2be730b2327b7f69e7e679}\label{graph_8c_a4e17c485ee2be730b2327b7f69e7e679}} 
+\index{graph.c@{graph.c}!FreeDijkstra@{FreeDijkstra}}
+\index{FreeDijkstra@{FreeDijkstra}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{FreeDijkstra()}{FreeDijkstra()}}
+{\footnotesize\ttfamily void Free\+Dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_dijkstra_node}{dijkstra\+Node}} $\ast$$\ast$}]{d,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire allouée par Dijkstra. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em d} & Tableau de noeux issu de l\textquotesingle{}algo de Dijkstra \\
+\hline
+{\em size} & Nombre de cases allouées dans le tableau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{graph_8c_a8557f0a0b7d7fab7d03d0ca45f5967a7}\label{graph_8c_a8557f0a0b7d7fab7d03d0ca45f5967a7}} 
+\index{graph.c@{graph.c}!freeGraph@{freeGraph}}
+\index{freeGraph@{freeGraph}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{freeGraph()}{freeGraph()}}
+{\footnotesize\ttfamily void free\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{mon\+Graph }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire allouée pour le graph. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mon\+Graph} & Graphe à libérer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{graph_8c_a6e62240b8e22133f69f952fc28efefc8}\label{graph_8c_a6e62240b8e22133f69f952fc28efefc8}} 
+\index{graph.c@{graph.c}!GetLayerIDFromChar@{GetLayerIDFromChar}}
+\index{GetLayerIDFromChar@{GetLayerIDFromChar}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{GetLayerIDFromChar()}{GetLayerIDFromChar()}}
+{\footnotesize\ttfamily int Get\+Layer\+I\+D\+From\+Char (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Permet de récupérer l\textquotesingle{}identifiant d\textquotesingle{}un terrain à partir de sa lettre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & Charactère correspondant au terrain (voir s\+\_\+ground\+Char)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Identifiant du type du terrain 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graph_8c_a50c57d37730aa46f2c13dca1ad25ff8b}\label{graph_8c_a50c57d37730aa46f2c13dca1ad25ff8b}} 
+\index{graph.c@{graph.c}!GetManhattanDistance@{GetManhattanDistance}}
+\index{GetManhattanDistance@{GetManhattanDistance}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{GetManhattanDistance()}{GetManhattanDistance()}}
+{\footnotesize\ttfamily int Get\+Manhattan\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}obtenir la distance de Manhattan entre deux noeux. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & Premier noeud \\
+\hline
+{\em b} & Second noeud\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La distance de Manhattan entre les deux noeud 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graph_8c_aba9632809da39c74c48b81522c31e471}\label{graph_8c_aba9632809da39c74c48b81522c31e471}} 
+\index{graph.c@{graph.c}!GetNodeData@{GetNodeData}}
+\index{GetNodeData@{GetNodeData}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{GetNodeData()}{GetNodeData()}}
+{\footnotesize\ttfamily void$\ast$ Get\+Node\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Permet de récupérer les données génériques incrites dans un noeud. Note\+: ne retire pas les données du noeud. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em node} & Noeud dont il faut récupérer les données\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers les données 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graph_8c_aa30365622ef96a1916abc8cea3f373f9}\label{graph_8c_aa30365622ef96a1916abc8cea3f373f9}} 
+\index{graph.c@{graph.c}!GetNodeFromPosition@{GetNodeFromPosition}}
+\index{GetNodeFromPosition@{GetNodeFromPosition}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{GetNodeFromPosition()}{GetNodeFromPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs_node}{node}}$\ast$ Get\+Node\+From\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_graph}{graph}} $\ast$}]{G,  }\item[{unsigned char}]{X,  }\item[{unsigned char}]{Y }\end{DoxyParamCaption})}
+
+
+
+Permet de récuperer la position d\textquotesingle{}un noeud dans un graphe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em G} & Pointeur sur le graphe dans lequel chercher \\
+\hline
+{\em X} & Valeur en abscisse (longueur) du noeud cherché \\
+\hline
+{\em Y} & Valeur en ordonnée (hauteur) du noeud cherché\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur sur le noeud recherché (s\textquotesingle{}il existe, N\+U\+LL sinon) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graph_8c_ad9411f4072f830baa6e532aa13c4f41a}\label{graph_8c_ad9411f4072f830baa6e532aa13c4f41a}} 
+\index{graph.c@{graph.c}!IsNeighbour@{IsNeighbour}}
+\index{IsNeighbour@{IsNeighbour}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{IsNeighbour()}{IsNeighbour()}}
+{\footnotesize\ttfamily char Is\+Neighbour (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Verifie si deux noeud sont voisins. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & Premier noeud \\
+\hline
+{\em b} & Second noeud\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si les noeud sont voisins, 0 sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graph_8c_a693b5b93e5d105458a65ca7421ea7f2b}\label{graph_8c_a693b5b93e5d105458a65ca7421ea7f2b}} 
+\index{graph.c@{graph.c}!LoadGraphFromFile@{LoadGraphFromFile}}
+\index{LoadGraphFromFile@{LoadGraphFromFile}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{LoadGraphFromFile()}{LoadGraphFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs_graph}{graph}}$\ast$ Load\+Graph\+From\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier }\end{DoxyParamCaption})}
+
+
+
+Charge le graphe depuis un fichier donné 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em fichier} & Chemin vers le fichier à lire\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur sur un graphe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{graph_8c_ab8aa38a25d26fa203c5bf3b74ba14b4f}\label{graph_8c_ab8aa38a25d26fa203c5bf3b74ba14b4f}} 
+\index{graph.c@{graph.c}!SetNodeData@{SetNodeData}}
+\index{SetNodeData@{SetNodeData}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{SetNodeData()}{SetNodeData()}}
+{\footnotesize\ttfamily void Set\+Node\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs_node}{node}} $\ast$}]{node,  }\item[{void $\ast$}]{valeur }\end{DoxyParamCaption})}
+
+
+
+Remplie le champ de données génériques d\textquotesingle{}un noeud. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em node} & Noeud à modifier \\
+\hline
+{\em valeur} & Pointeur vers les données à ajouter \\
+\hline
+\end{DoxyParams}

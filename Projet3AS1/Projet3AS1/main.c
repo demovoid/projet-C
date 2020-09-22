@@ -83,7 +83,7 @@ int main(int argc, char** argv){
 
 	afficherDijkstra(new,monGraph);
 
-	FreeDijkstra(new,monGraph);
+	FreeDijkstra(new,monGraph->m_sizeX*monGraph->m_sizeY);
 	
 	//Test de libération du graphe
 	freeGraph(monGraph);
