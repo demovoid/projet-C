@@ -83,7 +83,7 @@ LIB_API	graph* LoadGraphFromFile(char* fichier){
 					break;
 				default:
 					monGraph->m_data[i]->m_layer = NOTHING;
-					monGraph->m_data[i]->m_layerID = -1; //Signifie que l'objet n'a pas d'ID
+					monGraph->m_data[i]->m_layerID = GRASS_ID; //Signifie que l'objet n'a pas d'ID
 			}
 			monGraph->m_data[i]->m_neighbors[0] = monGraph->m_data[i]->m_posY ? monGraph->m_data[i-sizeX] : NULL;
 			monGraph->m_data[i]->m_neighbors[1] = monGraph->m_data[i]->m_posX ? monGraph->m_data[i-1] : NULL;
@@ -135,38 +135,34 @@ LIB_API	dijkstraNode** Dijkstra(graph* G, node* init, unsigned char mask)
 			nd[i]->m_prev = NULL;
 		}
 
-		int indice = init->m_posY*G->m_sizeX + init->m_posX;
+		int indice = init->m_posY * G->m_sizeX + init->m_posX;
 
 		nd[indice]->m_distance = 0;
-		nd[indice]->m_flag = 1;
 
 		dijkstraNode* target = NULL;
 		dijkstraNode* next;
 
-		do{
-			next = NULL;
-			for(int i = 0; i < 4; i++){
-				if(nd[indice]->m_node->m_neighbors[i] && nd[indice]->m_node->m_neighbors[i]->m_layer & mask){
-					target = nd[G->m_data[indice]->m_neighbors[i]->m_posY*G->m_sizeX + G->m_data[indice]->m_neighbors[i]->m_posX];
-					if(!target->m_flag){
-						if(target->m_distance > nd[indice]->m_distance + 1)
-							target->m_distance = nd[indice]->m_distance + 1;
-						if(!next || next->m_distance > target->m_distance)
-							next = target;
+		for (int i = 0; i < G->m_sizeY*G->m_sizeX; i++) {
+
+			next = nd[0];
+			for (int i = 1; i < G->m_sizeY * G->m_sizeX; i++)
+				if (!nd[i]->m_flag && next->m_distance > nd[i]->m_distance)
+					next = nd[i];
+
+			next->m_flag = 1;
+
+			for (int i = 0; i < 4; i++) {
+				if (next->m_node->m_neighbors[i]) {
+					target = nd[next->m_node->m_neighbors[i]->m_posY * G->m_sizeX + next->m_node->m_neighbors[i]->m_posX];
+					if (!target->m_flag && target->m_node->m_layer & mask) {
+						if (target->m_distance > next->m_distance + 1) {
+							target->m_distance = next->m_distance + 1;
+							target->m_prev = next;
+						}
 					}
 				}
 			}
-
-			if(!next)
-				next = nd[indice]->m_prev;
-			else{
-				next->m_flag = 1;
-				next->m_prev = nd[indice];
-			}
-
-			indice = next ? next->m_node->m_posY*G->m_sizeX + next->m_node->m_posX : -1;
-		
-		}while(next);
+		}
 	
 		return nd;
 

@@ -1,9 +1,9 @@
 ﻿  graph.c
   main.c
-     Création de la bibliothèque D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Release\graph.lib et de l'objet D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Release\graph.exp
-  Génération de code en cours
-  Previous IPDB not found, fall back to full compilation.
-D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Projet3AS1\graph.c(248): warning C4715: 'IsNeighbour' : les chemins de contrôle ne retournent pas tous une valeur
-  All 14 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Fin de la génération du code
-  Projet3AS1.vcxproj -> D:\Bureau\Scolaire\ESIEA\3A\Projet C\projet-C\Projet3AS1\Release\graph.dll
+     Creating library C:\Users\Demo\Desktop\projet c\projet-C\Projet3AS1\Release\graph.lib and object C:\Users\Demo\Desktop\projet c\projet-C\Projet3AS1\Release\graph.exp
+  Generating code
+  1 of 14 functions ( 7.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Projet3AS1.vcxproj -> C:\Users\Demo\Desktop\projet c\projet-C\Projet3AS1\Release\graph.dll
